@@ -1,19 +1,26 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="30G-YE-k0g">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="30G-YE-k0g">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 1-->
+        <!--动态-->
         <scene sceneID="tO9-8T-ace">
             <objects>
                 <navigationController id="7nJ-fG-26G" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="zgO-b9-j5w"/>
+                    <tabBarItem key="tabBarItem" title="动态" image="dong.png" id="zgO-b9-j5w"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6qr-BD-AUN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.25098039215686274" green="0.69803921568627447" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="UZz-1m-eV0" kind="relationship" relationship="rootViewController" id="drr-TR-xzw"/>
@@ -23,39 +30,39 @@
             </objects>
             <point key="canvasLocation" x="-706" y="-882"/>
         </scene>
-        <!--item 2-->
+        <!--门店-->
         <scene sceneID="YZW-al-Jp2">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="bpS-ig-qWz" sceneMemberID="viewController">
+                <viewController id="bpS-ig-qWz" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0kj-tg-fhD"/>
                         <viewControllerLayoutGuide type="bottom" id="i4g-jg-Mjp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZSV-oE-kvt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="item 2" id="uRc-Aq-kK0"/>
+                    <navigationItem key="navigationItem" title="门店" id="uRc-Aq-kK0" customClass="门店"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ED-GQ-TYs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-55" y="-255"/>
         </scene>
-        <!--item1-->
+        <!--动态-->
         <scene sceneID="eCF-Ri-f82">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="UZz-1m-eV0" sceneMemberID="viewController">
+                <viewController id="UZz-1m-eV0" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zQ8-1z-oys"/>
                         <viewControllerLayoutGuide type="bottom" id="NdO-GF-9Mp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zbP-OS-QTN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="item1" id="V9P-La-JV3"/>
+                    <navigationItem key="navigationItem" title="动态" id="V9P-La-JV3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="07z-s2-YvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -65,8 +72,7 @@
         <scene sceneID="zsd-gS-8bA">
             <objects>
                 <tabBarController id="30G-YE-k0g" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="jWi-Rr-TnT"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="hsE-kW-TLN">
+                    <tabBar key="tabBar" contentMode="scaleToFill" backgroundImage="tabbarBg.png" id="hsE-kW-TLN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -82,53 +88,64 @@
             </objects>
             <point key="canvasLocation" x="-1402" y="-188"/>
         </scene>
-        <!--item3-->
+        <!--发现-->
         <scene sceneID="CsT-XO-rbM">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="J5b-3k-PA6" sceneMemberID="viewController">
+                <viewController id="J5b-3k-PA6" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9c1-k1-3rZ"/>
                         <viewControllerLayoutGuide type="bottom" id="53c-Hx-RbD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LOM-b3-Mvm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="item3" id="r42-Vq-F9h"/>
+                    <navigationItem key="navigationItem" title="发现" id="r42-Vq-F9h"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhH-wq-9fl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-55" y="378"/>
         </scene>
-        <!--item4-->
+        <!--我的-->
         <scene sceneID="Hw7-TI-al6">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="kCX-n6-Rxo" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="kCX-n6-Rxo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3cA-cd-Dzk"/>
                         <viewControllerLayoutGuide type="bottom" id="E9J-TL-hVE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eLT-ex-pB1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xbO-zy-0w3">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="item4" id="c2P-zW-jzz"/>
+                    <navigationItem key="navigationItem" title="我的" id="c2P-zW-jzz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yD3-cP-QBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55" y="1008"/>
+            <point key="canvasLocation" x="-56.25" y="1007.7464788732394"/>
         </scene>
-        <!--Item 2-->
+        <!--门店-->
         <scene sceneID="oqE-0e-Dtl">
             <objects>
                 <navigationController id="Ug2-wh-wyK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="NiP-dL-niQ"/>
+                    <tabBarItem key="tabBarItem" title="门店" image="store.png" id="NiP-dL-niQ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="T5q-JF-Mim">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.25098039220000001" green="0.69803921570000005" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="bpS-ig-qWz" kind="relationship" relationship="rootViewController" id="iIN-ch-JV6"/>
@@ -138,14 +155,18 @@
             </objects>
             <point key="canvasLocation" x="-706" y="-255"/>
         </scene>
-        <!--Item 3-->
+        <!--发现-->
         <scene sceneID="4pd-Os-O2s">
             <objects>
                 <navigationController id="ZL3-rF-lpC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 3" id="sJU-4q-yr5"/>
+                    <tabBarItem key="tabBarItem" title="发现" image="find.png" id="sJU-4q-yr5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uc1-pc-AWc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.25098039220000001" green="0.69803921570000005" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="J5b-3k-PA6" kind="relationship" relationship="rootViewController" id="7M2-1K-RH5"/>
@@ -155,14 +176,18 @@
             </objects>
             <point key="canvasLocation" x="-706" y="377"/>
         </scene>
-        <!--Item 4-->
+        <!--我的-->
         <scene sceneID="xK5-uK-daA">
             <objects>
                 <navigationController id="JVJ-bp-sVV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 4" id="gB3-I9-lNg"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="user.png" id="gB3-I9-lNg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ElQ-UK-kTt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.25098039220000001" green="0.69803921570000005" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="kCX-n6-Rxo" kind="relationship" relationship="rootViewController" id="55L-xZ-T0h"/>
@@ -170,7 +195,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zaf-VB-KKB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-706" y="1015"/>
+            <point key="canvasLocation" x="-707" y="1008"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dong.png" width="26" height="26"/>
+        <image name="find.png" width="26" height="26"/>
+        <image name="store.png" width="26" height="26"/>
+        <image name="tabbarBg.png" width="320" height="49"/>
+        <image name="user.png" width="26" height="26"/>
+    </resources>
 </document>
