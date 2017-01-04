@@ -8,6 +8,12 @@
 
 #import "BaseModel.h"
 
+
+@class Store;
 @interface Device : BaseModel
 
+@property (weak, nonatomic) Store * store;
+@property (strong, nonatomic) NSString * name;
+@property (strong, nonatomic) NSString * identifier;
+@property (strong, nonatomic) NSString * sn;
 @end

@@ -7,7 +7,9 @@
 //
 
 #import "BaseModel.h"
-
+#import "Device.h"
 @interface Store : BaseModel
-
+@property (strong, nonatomic) NSString * name;
+@property (strong, nonatomic) NSString * identifier;
+@property (strong, nonatomic) NSArray <Device *>* devices;
 @end

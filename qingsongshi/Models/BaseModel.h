@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BaseModel : NSObject
+@interface BaseModel : NSObject<NSCopying, NSMutableCopying>
 
 @end

@@ -9,23 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="bla-AX-b70">
-            <objects>
-                <navigationController id="DvP-kA-oIc" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Ga-zg-sBX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X0H-td-6fr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-366" y="-113"/>
-        </scene>
         <!--Login View Controller-->
         <scene sceneID="E45-Cm-J9g">
             <objects>
-                <viewController id="ULH-9g-QrJ" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="ULH-9g-QrJ" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j5N-vP-u88"/>
                         <viewControllerLayoutGuide type="bottom" id="Phe-0u-3H0"/>
@@ -57,11 +44,10 @@
                             <constraint firstItem="1OE-KJ-CiI" firstAttribute="centerX" secondItem="oKA-BI-7iQ" secondAttribute="centerX" id="pvE-ig-gDg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="1vy-Qg-hMi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pk9-q8-5o3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="408.80000000000001" y="-121.88905547226388"/>
+            <point key="canvasLocation" x="-250" y="-135"/>
         </scene>
     </scenes>
     <resources>
