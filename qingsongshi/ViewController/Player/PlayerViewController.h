@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
+
+@class Store, Device;
+
 @interface PlayerViewController : BaseViewController
+
+@property (copy, nonatomic) Device * device;
 
 @end

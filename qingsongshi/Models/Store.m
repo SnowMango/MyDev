@@ -10,4 +10,14 @@
 
 @implementation Store
 
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.devices = [NSMutableArray new];
+    }
+    return self;
+}
+
 @end

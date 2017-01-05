@@ -11,5 +11,6 @@
 
 #import "MJRefresh.h"
 #import "UIImageView+WebCache.h"
-
+#import "UCloudMediaPlayer.h"
+#import "UCloudMediaPlayback.h"
 #endif /* Application_pch */

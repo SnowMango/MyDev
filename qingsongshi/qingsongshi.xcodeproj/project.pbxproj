@@ -90,6 +90,12 @@
 		6AAA623F1E1CD2F300ADEBFF /* Player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AAA623E1E1CD2F300ADEBFF /* Player.storyboard */; };
 		6AAA62411E1CD6BD00ADEBFF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AAA62401E1CD6BD00ADEBFF /* Login.storyboard */; };
 		6AAA62431E1CD7E400ADEBFF /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AAA62421E1CD7E400ADEBFF /* AppIcon.png */; };
+		6AD37C9C1E1DECA00012B37A /* libUCloudMediaPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD37C971E1DECA00012B37A /* libUCloudMediaPlayer.a */; };
+		6AD37CEC1E1DED9A0012B37A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD37CEB1E1DED9A0012B37A /* libz.tbd */; };
+		6AD37CEE1E1DEDAB0012B37A /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD37CED1E1DEDAB0012B37A /* VideoToolbox.framework */; };
+		6AD37CF01E1DEDBC0012B37A /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD37CEF1E1DEDBC0012B37A /* CoreMedia.framework */; };
+		6AD37CF21E1DEDC40012B37A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD37CF11E1DEDC40012B37A /* AudioToolbox.framework */; };
+		6AD37CF41E1DEDD00012B37A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD37CF31E1DEDD00012B37A /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -241,6 +247,16 @@
 		6AAA623E1E1CD2F300ADEBFF /* Player.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Player.storyboard; sourceTree = "<group>"; };
 		6AAA62401E1CD6BD00ADEBFF /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		6AAA62421E1CD7E400ADEBFF /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
+		6AD37C971E1DECA00012B37A /* libUCloudMediaPlayer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUCloudMediaPlayer.a; sourceTree = "<group>"; };
+		6AD37C981E1DECA00012B37A /* UCloudMediaModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudMediaModule.h; sourceTree = "<group>"; };
+		6AD37C991E1DECA00012B37A /* UCloudMediaPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudMediaPlayback.h; sourceTree = "<group>"; };
+		6AD37C9A1E1DECA00012B37A /* UCloudMediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudMediaPlayer.h; sourceTree = "<group>"; };
+		6AD37C9B1E1DECA00012B37A /* UCloudPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudPlayback.h; sourceTree = "<group>"; };
+		6AD37CEB1E1DED9A0012B37A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		6AD37CED1E1DEDAB0012B37A /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		6AD37CEF1E1DEDBC0012B37A /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		6AD37CF11E1DEDC40012B37A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		6AD37CF31E1DEDD00012B37A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,8 +264,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AD37CF41E1DEDD00012B37A /* AVFoundation.framework in Frameworks */,
+				6AD37CF21E1DEDC40012B37A /* AudioToolbox.framework in Frameworks */,
+				6AD37CF01E1DEDBC0012B37A /* CoreMedia.framework in Frameworks */,
+				6AD37CEE1E1DEDAB0012B37A /* VideoToolbox.framework in Frameworks */,
+				6AD37CEC1E1DED9A0012B37A /* libz.tbd in Frameworks */,
 				6A337C8E1E1D3BF900E120A3 /* ImageIO.framework in Frameworks */,
 				6AAA62161E1CC52300ADEBFF /* CoreGraphics.framework in Frameworks */,
+				6AD37C9C1E1DECA00012B37A /* libUCloudMediaPlayer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +509,7 @@
 		6AAA61C91E1CC3D300ADEBFF /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				6AD37C961E1DECA00012B37A /* Player */,
 				6A337C8F1E1D3CAC00E120A3 /* AFNetworking */,
 				6A337C581E1D3B5800E120A3 /* SDWebImage */,
 				6AAA62171E1CC54800ADEBFF /* FistLetter */,
@@ -613,6 +636,11 @@
 		6AAA62141E1CC51600ADEBFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6AD37CF31E1DEDD00012B37A /* AVFoundation.framework */,
+				6AD37CF11E1DEDC40012B37A /* AudioToolbox.framework */,
+				6AD37CEF1E1DEDBC0012B37A /* CoreMedia.framework */,
+				6AD37CED1E1DEDAB0012B37A /* VideoToolbox.framework */,
+				6AD37CEB1E1DED9A0012B37A /* libz.tbd */,
 				6A337C8D1E1D3BF900E120A3 /* ImageIO.framework */,
 				6AAA62151E1CC52300ADEBFF /* CoreGraphics.framework */,
 			);
@@ -640,6 +668,18 @@
 				6AAA62421E1CD7E400ADEBFF /* AppIcon.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		6AD37C961E1DECA00012B37A /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				6AD37C971E1DECA00012B37A /* libUCloudMediaPlayer.a */,
+				6AD37C981E1DECA00012B37A /* UCloudMediaModule.h */,
+				6AD37C991E1DECA00012B37A /* UCloudMediaPlayback.h */,
+				6AD37C9A1E1DECA00012B37A /* UCloudMediaPlayer.h */,
+				6AD37C9B1E1DECA00012B37A /* UCloudPlayback.h */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -906,11 +946,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GVH7JZXR3Q;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = qingsongshi/Application.pch;
 				INFOPLIST_FILE = qingsongshi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Lib/Player",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sh.qingsongshi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -922,11 +967,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GVH7JZXR3Q;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = qingsongshi/Application.pch;
 				INFOPLIST_FILE = qingsongshi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Lib/Player",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sh.qingsongshi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
