@@ -212,7 +212,7 @@
     float width = CGRectGetWidth([UIScreen mainScreen].bounds);
     
     CGRect rect = {{0,0},{width, width*9/16}};
-    [self.mediaPlayer showMediaPlayer:path urltype:UrlTypeLive frame:rect view:self.playView completion:^(NSInteger defaultNum, NSArray *data) {
+    [self.mediaPlayer showMediaPlayer:path urltype:UrlTypeAuto frame:rect view:self.playView completion:^(NSInteger defaultNum, NSArray *data) {
         if (self.mediaPlayer) {
             weakSelf.mediaPlayer.player.scalingMode = MPMovieScalingModeAspectFit;
 //            [[NSNotificationCenter defaultCenter] postNotificationName:UCloudPlayerVideoChangeRotationNotification object:@(0)];
