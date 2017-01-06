@@ -19,17 +19,15 @@
 @implementation HomeViewController
 - (void)dealloc
 {
-//    [self.tableView removeObserver:self forKeyPath:@"contentOffset"];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     [self.navigationController setNavigationBarHidden:YES animated:NO];
-    // Do any additional setup after loading the view.
-//    [self.tableView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
     
-     UIPanGestureRecognizer *pan = self.tableView.panGestureRecognizer;
-    [pan addTarget:self action:@selector(tableViewPan:)];
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc ] initWithTarget:self action:@selector(tableViewPan:)];
+    [self.tableView addGestureRecognizer:pan];
+
 }
 
 
