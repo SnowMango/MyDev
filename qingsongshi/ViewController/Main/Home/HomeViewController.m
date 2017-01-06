@@ -7,31 +7,70 @@
 //
 
 #import "HomeViewController.h"
+#import <AVKit/AVKit.h>
+#import "UIScrollView+Extension.h"
+@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-@interface HomeViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *moduleView;
 
 @end
 
 @implementation HomeViewController
-
+- (void)dealloc
+{
+//    [self.tableView removeObserver:self forKeyPath:@"contentOffset"];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
     // Do any additional setup after loading the view.
+//    [self.tableView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
+    
+     UIPanGestureRecognizer *pan = self.tableView.panGestureRecognizer;
+    [pan addTarget:self action:@selector(tableViewPan:)];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (void)tableViewPan:(UIPanGestureRecognizer *)pan
+{
+    NSLog(@"move");
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"move");
 }
-*/
+
+- (void)observeValueForKeyPath:(nullable NSString *)keyPath ofObject:(nullable id)object change:(nullable NSDictionary<NSKeyValueChangeKey, id> *)change context:(nullable void *)context
+{
+    if ([keyPath isEqualToString:@"contentOffset"]) {
+        CGPoint offset = [change[NSKeyValueChangeNewKey] CGPointValue];
+        NSLog(@"offset.y = %@", @(offset.y));
+        if (offset.y) {
+            CGRect frame = self.moduleView.frame;
+            frame.size.height = 120 - offset.y;
+            if (frame.size.height < 0) {
+                frame.size.height = 0;
+            }
+            self.moduleView.frame = frame;
+        
+//            self.moduleView.transform = CGAffineTransformMakeTranslation(0, -offset.y);
+        }
+    }
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"HomeCellId" forIndexPath:indexPath];
+    return cell;
+}
+
+
 
 @end

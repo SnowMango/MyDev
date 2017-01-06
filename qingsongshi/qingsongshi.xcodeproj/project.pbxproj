@@ -90,6 +90,8 @@
 		6AAA623F1E1CD2F300ADEBFF /* Player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AAA623E1E1CD2F300ADEBFF /* Player.storyboard */; };
 		6AAA62411E1CD6BD00ADEBFF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AAA62401E1CD6BD00ADEBFF /* Login.storyboard */; };
 		6AAA62431E1CD7E400ADEBFF /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AAA62421E1CD7E400ADEBFF /* AppIcon.png */; };
+		6AB37CEC1E1F378000ABF883 /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB37CEB1E1F378000ABF883 /* UIScrollView+Extension.m */; };
+		6AB37CEE1E1F38FC00ABF883 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AB37CED1E1F38FC00ABF883 /* AVKit.framework */; };
 		6AD37C9C1E1DECA00012B37A /* libUCloudMediaPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD37C971E1DECA00012B37A /* libUCloudMediaPlayer.a */; };
 		6AD37CEC1E1DED9A0012B37A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD37CEB1E1DED9A0012B37A /* libz.tbd */; };
 		6AD37CEE1E1DEDAB0012B37A /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD37CED1E1DEDAB0012B37A /* VideoToolbox.framework */; };
@@ -247,6 +249,9 @@
 		6AAA623E1E1CD2F300ADEBFF /* Player.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Player.storyboard; sourceTree = "<group>"; };
 		6AAA62401E1CD6BD00ADEBFF /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		6AAA62421E1CD7E400ADEBFF /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
+		6AB37CEA1E1F378000ABF883 /* UIScrollView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Extension.h"; sourceTree = "<group>"; };
+		6AB37CEB1E1F378000ABF883 /* UIScrollView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Extension.m"; sourceTree = "<group>"; };
+		6AB37CED1E1F38FC00ABF883 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		6AD37C971E1DECA00012B37A /* libUCloudMediaPlayer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUCloudMediaPlayer.a; sourceTree = "<group>"; };
 		6AD37C981E1DECA00012B37A /* UCloudMediaModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudMediaModule.h; sourceTree = "<group>"; };
 		6AD37C991E1DECA00012B37A /* UCloudMediaPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudMediaPlayback.h; sourceTree = "<group>"; };
@@ -264,6 +269,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AB37CEE1E1F38FC00ABF883 /* AVKit.framework in Frameworks */,
 				6AD37CF41E1DEDD00012B37A /* AVFoundation.framework in Frameworks */,
 				6AD37CF21E1DEDC40012B37A /* AudioToolbox.framework in Frameworks */,
 				6AD37CF01E1DEDBC0012B37A /* CoreMedia.framework in Frameworks */,
@@ -509,6 +515,7 @@
 		6AAA61C91E1CC3D300ADEBFF /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				6AB37CE91E1F378000ABF883 /* UIScrollView+Extension */,
 				6AD37C961E1DECA00012B37A /* Player */,
 				6A337C8F1E1D3CAC00E120A3 /* AFNetworking */,
 				6A337C581E1D3B5800E120A3 /* SDWebImage */,
@@ -636,6 +643,7 @@
 		6AAA62141E1CC51600ADEBFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6AB37CED1E1F38FC00ABF883 /* AVKit.framework */,
 				6AD37CF31E1DEDD00012B37A /* AVFoundation.framework */,
 				6AD37CF11E1DEDC40012B37A /* AudioToolbox.framework */,
 				6AD37CEF1E1DEDBC0012B37A /* CoreMedia.framework */,
@@ -668,6 +676,15 @@
 				6AAA62421E1CD7E400ADEBFF /* AppIcon.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		6AB37CE91E1F378000ABF883 /* UIScrollView+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6AB37CEA1E1F378000ABF883 /* UIScrollView+Extension.h */,
+				6AB37CEB1E1F378000ABF883 /* UIScrollView+Extension.m */,
+			);
+			path = "UIScrollView+Extension";
 			sourceTree = "<group>";
 		};
 		6AD37C961E1DECA00012B37A /* Player */ = {
@@ -818,6 +835,7 @@
 				6A337C7D1E1D3B7200E120A3 /* NSImage+WebCache.m in Sources */,
 				6A337CA91E1D3DD500E120A3 /* User.m in Sources */,
 				6AAA62041E1CC46500ADEBFF /* MJRefreshNormalHeader.m in Sources */,
+				6AB37CEC1E1F378000ABF883 /* UIScrollView+Extension.m in Sources */,
 				6A337C811E1D3B7200E120A3 /* SDWebImageDecoder.m in Sources */,
 				6A337C9D1E1D3CAC00E120A3 /* AFHTTPSessionManager.m in Sources */,
 				6A337C801E1D3B7200E120A3 /* SDWebImageCompat.m in Sources */,
@@ -950,7 +968,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = qingsongshi/Application.pch;
 				INFOPLIST_FILE = qingsongshi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -971,7 +989,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = qingsongshi/Application.pch;
 				INFOPLIST_FILE = qingsongshi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
