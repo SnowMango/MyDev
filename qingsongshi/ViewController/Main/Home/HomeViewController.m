@@ -11,63 +11,62 @@
 #import "UIScrollView+Extension.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *otherToolsView;
+@property (weak, nonatomic) IBOutlet UIView *baseFuncView;
 @property (weak, nonatomic) IBOutlet UIView *moduleView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (assign) CGFloat viewOffset;
 @end
 
 @implementation HomeViewController
 - (void)dealloc
 {
 }
+//static CGFloat height = 0;
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc ] initWithTarget:self action:@selector(tableViewPan:)];
-    [self.tableView addGestureRecognizer:pan];
-
+    
+    self.tableView.rowHeight = 135;
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(move:)];
+    [self.view addGestureRecognizer:pan];
+    
 }
 
-
-- (void)tableViewPan:(UIPanGestureRecognizer *)pan
+- (void)move:(UIPanGestureRecognizer *)pan
 {
-    NSLog(@"move");
+    
+//    CGFloat offset = [pan translationInView:self.view].y;
+//    if (pan.state == UIGestureRecognizerStateChanged) {
+//        NSLog(@"move %@",@(offset));
+//        if (offset < 0) {
+//            CGFloat h = (131+ offset)>=0? 131+ offset:0;
+//            self.moduleView.height = h;
+//            if (h) {
+////                self.moduleView.top = self.baseFuncView.bottom;
+//                self.tableView.top = self.moduleView.bottom;
+//            }
+//        }
+//    }
 }
 
-- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    NSLog(@"move");
-}
-
-- (void)observeValueForKeyPath:(nullable NSString *)keyPath ofObject:(nullable id)object change:(nullable NSDictionary<NSKeyValueChangeKey, id> *)change context:(nullable void *)context
-{
-    if ([keyPath isEqualToString:@"contentOffset"]) {
-        CGPoint offset = [change[NSKeyValueChangeNewKey] CGPointValue];
-        NSLog(@"offset.y = %@", @(offset.y));
-        if (offset.y) {
-            CGRect frame = self.moduleView.frame;
-            frame.size.height = 120 - offset.y;
-            if (frame.size.height < 0) {
-                frame.size.height = 0;
-            }
-            self.moduleView.frame = frame;
-        
-//            self.moduleView.transform = CGAffineTransformMakeTranslation(0, -offset.y);
-        }
-    }
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"HomeCellId" forIndexPath:indexPath];
+    
+    NSString *identifier = @[@"HomeCellId1",@"HomeCellId2"][indexPath.row%2];
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     return cell;
 }
+
+
 
 
 

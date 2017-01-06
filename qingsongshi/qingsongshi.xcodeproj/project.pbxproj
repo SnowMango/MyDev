@@ -52,6 +52,7 @@
 		6A337D011E1D69CC00E120A3 /* me_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A337CFA1E1D69CC00E120A3 /* me_4@2x.png */; };
 		6A337D021E1D69CC00E120A3 /* me_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A337CFB1E1D69CC00E120A3 /* me_5@2x.png */; };
 		6A337D031E1D69CC00E120A3 /* me_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A337CFC1E1D69CC00E120A3 /* me_6@2x.png */; };
+		6A4444081E1FBF9E00B63013 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4444071E1FBF9E00B63013 /* UIViewExt.m */; };
 		6A5677FA1E1D6CA70026739E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5677F91E1D6CA70026739E /* HomeViewController.m */; };
 		6A5677FD1E1D6CDA0026739E /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5677FC1E1D6CDA0026739E /* StoreViewController.m */; };
 		6A5678001E1D6CF30026739E /* ModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5677FF1E1D6CF30026739E /* ModuleViewController.m */; };
@@ -181,6 +182,8 @@
 		6A337CFA1E1D69CC00E120A3 /* me_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me_4@2x.png"; sourceTree = "<group>"; };
 		6A337CFB1E1D69CC00E120A3 /* me_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me_5@2x.png"; sourceTree = "<group>"; };
 		6A337CFC1E1D69CC00E120A3 /* me_6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me_6@2x.png"; sourceTree = "<group>"; };
+		6A4444061E1FBF9E00B63013 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
+		6A4444071E1FBF9E00B63013 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		6A5677F81E1D6CA70026739E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		6A5677F91E1D6CA70026739E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		6A5677FB1E1D6CDA0026739E /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
@@ -468,6 +471,15 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		6A4444051E1FBF9E00B63013 /* UIViewExt */ = {
+			isa = PBXGroup;
+			children = (
+				6A4444061E1FBF9E00B63013 /* UIViewExt.h */,
+				6A4444071E1FBF9E00B63013 /* UIViewExt.m */,
+			);
+			path = UIViewExt;
+			sourceTree = "<group>";
+		};
 		6AAA61A31E1CBDAF00ADEBFF = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +527,7 @@
 		6AAA61C91E1CC3D300ADEBFF /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				6A4444051E1FBF9E00B63013 /* UIViewExt */,
 				6AB37CE91E1F378000ABF883 /* UIScrollView+Extension */,
 				6AD37C961E1DECA00012B37A /* Player */,
 				6A337C8F1E1D3CAC00E120A3 /* AFNetworking */,
@@ -799,6 +812,7 @@
 				6AAA621F1E1CC54800ADEBFF /* NSString+FirstLetter.m in Sources */,
 				6A337C861E1D3B7200E120A3 /* UIButton+WebCache.m in Sources */,
 				6A337C851E1D3B7200E120A3 /* SDWebImagePrefetcher.m in Sources */,
+				6A4444081E1FBF9E00B63013 /* UIViewExt.m in Sources */,
 				6AAA62081E1CC46500ADEBFF /* UIScrollView+MJExtension.m in Sources */,
 				6AAA61FB1E1CC46500ADEBFF /* MJRefreshFooter.m in Sources */,
 				6A337C9E1E1D3CAC00E120A3 /* AFNetworkReachabilityManager.m in Sources */,

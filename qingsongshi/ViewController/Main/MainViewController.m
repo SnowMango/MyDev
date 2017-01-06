@@ -38,6 +38,11 @@
     return mask;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 - (BOOL)shouldAutorotate
 {
     return YES;

@@ -13,6 +13,8 @@
 #import "UIImageView+WebCache.h"
 #import "UCloudMediaPlayer.h"
 #import "UCloudMediaPlayback.h"
+
 #import "UIScrollView+Extension.h"
+#import "UIViewExt.h"
 #import <AVKit/AVKit.h>
 #endif /* Application_pch */
