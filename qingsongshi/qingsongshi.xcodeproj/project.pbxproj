@@ -53,6 +53,21 @@
 		6A337D021E1D69CC00E120A3 /* me_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A337CFB1E1D69CC00E120A3 /* me_5@2x.png */; };
 		6A337D031E1D69CC00E120A3 /* me_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A337CFC1E1D69CC00E120A3 /* me_6@2x.png */; };
 		6A4444081E1FBF9E00B63013 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4444071E1FBF9E00B63013 /* UIViewExt.m */; };
+		6A4444261E20922500B63013 /* bg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6A44441F1E20922500B63013 /* bg.jpeg */; };
+		6A4444271E20922500B63013 /* icon_hand.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A4444201E20922500B63013 /* icon_hand.png */; };
+		6A4444281E20922500B63013 /* iconfont-password.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A4444211E20922500B63013 /* iconfont-password.png */; };
+		6A4444291E20922500B63013 /* iconfont-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A4444221E20922500B63013 /* iconfont-user.png */; };
+		6A44442A1E20922500B63013 /* owl-login-arm-left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A4444231E20922500B63013 /* owl-login-arm-left@2x.png */; };
+		6A44442B1E20922500B63013 /* owl-login-arm-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A4444241E20922500B63013 /* owl-login-arm-right@2x.png */; };
+		6A44442C1E20922500B63013 /* owl-login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A4444251E20922500B63013 /* owl-login@2x.png */; };
+		6A4444301E20929E00B63013 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A44442F1E20929E00B63013 /* LoginView.m */; };
+		6A4444331E209F1700B63013 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4444321E209F1700B63013 /* RootViewController.m */; };
+		6A4444541E20AC3100B63013 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A44444B1E20AC3100B63013 /* SVIndefiniteAnimatedView.m */; };
+		6A4444551E20AC3100B63013 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A44444D1E20AC3100B63013 /* SVProgressAnimatedView.m */; };
+		6A4444561E20AC3100B63013 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6A44444F1E20AC3100B63013 /* SVProgressHUD.bundle */; };
+		6A4444571E20AC3100B63013 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4444511E20AC3100B63013 /* SVProgressHUD.m */; };
+		6A4444581E20AC3100B63013 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4444531E20AC3100B63013 /* SVRadialGradientLayer.m */; };
+		6A44445C1E20BBEB00B63013 /* HomeActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A44445B1E20BBEB00B63013 /* HomeActionView.m */; };
 		6A5677FA1E1D6CA70026739E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5677F91E1D6CA70026739E /* HomeViewController.m */; };
 		6A5677FD1E1D6CDA0026739E /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5677FC1E1D6CDA0026739E /* StoreViewController.m */; };
 		6A5678001E1D6CF30026739E /* ModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5677FF1E1D6CF30026739E /* ModuleViewController.m */; };
@@ -184,6 +199,29 @@
 		6A337CFC1E1D69CC00E120A3 /* me_6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me_6@2x.png"; sourceTree = "<group>"; };
 		6A4444061E1FBF9E00B63013 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		6A4444071E1FBF9E00B63013 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
+		6A44441F1E20922500B63013 /* bg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpeg; sourceTree = "<group>"; };
+		6A4444201E20922500B63013 /* icon_hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_hand.png; sourceTree = "<group>"; };
+		6A4444211E20922500B63013 /* iconfont-password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-password.png"; sourceTree = "<group>"; };
+		6A4444221E20922500B63013 /* iconfont-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-user.png"; sourceTree = "<group>"; };
+		6A4444231E20922500B63013 /* owl-login-arm-left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "owl-login-arm-left@2x.png"; sourceTree = "<group>"; };
+		6A4444241E20922500B63013 /* owl-login-arm-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "owl-login-arm-right@2x.png"; sourceTree = "<group>"; };
+		6A4444251E20922500B63013 /* owl-login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "owl-login@2x.png"; sourceTree = "<group>"; };
+		6A44442E1E20929E00B63013 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		6A44442F1E20929E00B63013 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		6A4444311E209F1700B63013 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		6A4444321E209F1700B63013 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		6A44444A1E20AC3100B63013 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		6A44444B1E20AC3100B63013 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		6A44444C1E20AC3100B63013 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		6A44444D1E20AC3100B63013 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		6A44444E1E20AC3100B63013 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		6A44444F1E20AC3100B63013 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		6A4444501E20AC3100B63013 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		6A4444511E20AC3100B63013 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		6A4444521E20AC3100B63013 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		6A4444531E20AC3100B63013 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		6A44445A1E20BBEB00B63013 /* HomeActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeActionView.h; sourceTree = "<group>"; };
+		6A44445B1E20BBEB00B63013 /* HomeActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeActionView.m; sourceTree = "<group>"; };
 		6A5677F81E1D6CA70026739E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		6A5677F91E1D6CA70026739E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		6A5677FB1E1D6CDA0026739E /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
@@ -393,6 +431,7 @@
 		6A337CB11E1D3F5A00E120A3 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				6A44442D1E20925C00B63013 /* View */,
 				6A337CCF1E1D411F00E120A3 /* LoginViewController.h */,
 				6A337CD01E1D411F00E120A3 /* LoginViewController.m */,
 			);
@@ -433,6 +472,7 @@
 		6A337CD91E1D460600E120A3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				6A4444591E20BBB700B63013 /* View */,
 				6A5677F81E1D6CA70026739E /* HomeViewController.h */,
 				6A5677F91E1D6CA70026739E /* HomeViewController.m */,
 			);
@@ -480,6 +520,55 @@
 			path = UIViewExt;
 			sourceTree = "<group>";
 		};
+		6A44441E1E20920700B63013 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6A44441F1E20922500B63013 /* bg.jpeg */,
+				6A4444201E20922500B63013 /* icon_hand.png */,
+				6A4444211E20922500B63013 /* iconfont-password.png */,
+				6A4444221E20922500B63013 /* iconfont-user.png */,
+				6A4444231E20922500B63013 /* owl-login-arm-left@2x.png */,
+				6A4444241E20922500B63013 /* owl-login-arm-right@2x.png */,
+				6A4444251E20922500B63013 /* owl-login@2x.png */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6A44442D1E20925C00B63013 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6A44442E1E20929E00B63013 /* LoginView.h */,
+				6A44442F1E20929E00B63013 /* LoginView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6A4444491E20AC3100B63013 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				6A44444A1E20AC3100B63013 /* SVIndefiniteAnimatedView.h */,
+				6A44444B1E20AC3100B63013 /* SVIndefiniteAnimatedView.m */,
+				6A44444C1E20AC3100B63013 /* SVProgressAnimatedView.h */,
+				6A44444D1E20AC3100B63013 /* SVProgressAnimatedView.m */,
+				6A44444E1E20AC3100B63013 /* SVProgressHUD-Prefix.pch */,
+				6A44444F1E20AC3100B63013 /* SVProgressHUD.bundle */,
+				6A4444501E20AC3100B63013 /* SVProgressHUD.h */,
+				6A4444511E20AC3100B63013 /* SVProgressHUD.m */,
+				6A4444521E20AC3100B63013 /* SVRadialGradientLayer.h */,
+				6A4444531E20AC3100B63013 /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		6A4444591E20BBB700B63013 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6A44445A1E20BBEB00B63013 /* HomeActionView.h */,
+				6A44445B1E20BBEB00B63013 /* HomeActionView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6AAA61A31E1CBDAF00ADEBFF = {
 			isa = PBXGroup;
 			children = (
@@ -506,6 +595,8 @@
 			children = (
 				6AAA61B21E1CBDAF00ADEBFF /* AppDelegate.h */,
 				6AAA61B31E1CBDAF00ADEBFF /* AppDelegate.m */,
+				6A4444311E209F1700B63013 /* RootViewController.h */,
+				6A4444321E209F1700B63013 /* RootViewController.m */,
 				6AAA61BE1E1CBDAF00ADEBFF /* Assets.xcassets */,
 				6AAA61C01E1CBDAF00ADEBFF /* LaunchScreen.storyboard */,
 				6A337CDC1E1D55CA00E120A3 /* Application.pch */,
@@ -527,6 +618,7 @@
 		6AAA61C91E1CC3D300ADEBFF /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				6A4444491E20AC3100B63013 /* SVProgressHUD */,
 				6A4444051E1FBF9E00B63013 /* UIViewExt */,
 				6AB37CE91E1F378000ABF883 /* UIScrollView+Extension */,
 				6AD37C961E1DECA00012B37A /* Player */,
@@ -684,6 +776,7 @@
 		6AAA623C1E1CCEE400ADEBFF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6A44441E1E20920700B63013 /* Login */,
 				6A337CF51E1D69B700E120A3 /* User */,
 				6A337C4D1E1D361000E120A3 /* TabBar */,
 				6AAA62421E1CD7E400ADEBFF /* AppIcon.png */,
@@ -771,10 +864,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A4444281E20922500B63013 /* iconfont-password.png in Resources */,
 				6A337C531E1D361B00E120A3 /* store@2x.png in Resources */,
 				6AAA62431E1CD7E400ADEBFF /* AppIcon.png in Resources */,
+				6A4444271E20922500B63013 /* icon_hand.png in Resources */,
 				6A337D011E1D69CC00E120A3 /* me_4@2x.png in Resources */,
+				6A4444561E20AC3100B63013 /* SVProgressHUD.bundle in Resources */,
 				6AAA61C21E1CBDAF00ADEBFF /* LaunchScreen.storyboard in Resources */,
+				6A4444261E20922500B63013 /* bg.jpeg in Resources */,
 				6AAA623F1E1CD2F300ADEBFF /* Player.storyboard in Resources */,
 				6A337C551E1D361B00E120A3 /* dong@2x.png in Resources */,
 				6A337D031E1D69CC00E120A3 /* me_6@2x.png in Resources */,
@@ -782,16 +879,20 @@
 				6A5678171E1D715A0026739E /* ModuleConfig.plist in Resources */,
 				6AAA61BF1E1CBDAF00ADEBFF /* Assets.xcassets in Resources */,
 				6A337C571E1D36E800E120A3 /* tabbarBg@2x.png in Resources */,
+				6A4444291E20922500B63013 /* iconfont-user.png in Resources */,
 				6AAA62061E1CC46500ADEBFF /* MJRefresh.bundle in Resources */,
+				6A44442B1E20922500B63013 /* owl-login-arm-right@2x.png in Resources */,
 				6A337C521E1D361B00E120A3 /* user@2x.png in Resources */,
 				6AAA623B1E1CCECA00ADEBFF /* LaunchActive.storyboard in Resources */,
 				6A337D021E1D69CC00E120A3 /* me_5@2x.png in Resources */,
 				6A337CFE1E1D69CC00E120A3 /* me_1@2x.png in Resources */,
+				6A44442C1E20922500B63013 /* owl-login@2x.png in Resources */,
 				6A337D001E1D69CC00E120A3 /* me_3@2x.png in Resources */,
 				6AAA62391E1CCE7B00ADEBFF /* Main.storyboard in Resources */,
 				6A337CFD1E1D69CC00E120A3 /* 4a@2x.png in Resources */,
 				6A337CFF1E1D69CC00E120A3 /* me_2@2x.png in Resources */,
 				6A337C541E1D361B00E120A3 /* find@2x.png in Resources */,
+				6A44442A1E20922500B63013 /* owl-login-arm-left@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,6 +904,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AAA61FE1E1CC46500ADEBFF /* MJRefreshAutoNormalFooter.m in Sources */,
+				6A44445C1E20BBEB00B63013 /* HomeActionView.m in Sources */,
 				6A337C8C1E1D3B7200E120A3 /* UIView+WebCacheOperation.m in Sources */,
 				6AAA62011E1CC46500ADEBFF /* MJRefreshBackNormalFooter.m in Sources */,
 				6AAA620E1E1CC49000ADEBFF /* MBProgressHUD.m in Sources */,
@@ -819,7 +921,9 @@
 				6AAA62031E1CC46500ADEBFF /* MJRefreshGifHeader.m in Sources */,
 				6AAA61F81E1CC46500ADEBFF /* MJRefreshAutoFooter.m in Sources */,
 				6A337C7E1E1D3B7200E120A3 /* SDImageCache.m in Sources */,
+				6A4444571E20AC3100B63013 /* SVProgressHUD.m in Sources */,
 				6A337C8A1E1D3B7200E120A3 /* UIImageView+WebCache.m in Sources */,
+				6A4444331E209F1700B63013 /* RootViewController.m in Sources */,
 				6A5677FA1E1D6CA70026739E /* HomeViewController.m in Sources */,
 				6A337C841E1D3B7200E120A3 /* SDWebImageManager.m in Sources */,
 				6A337CA61E1D3D8700E120A3 /* BaseModel.m in Sources */,
@@ -832,14 +936,17 @@
 				6A337C871E1D3B7200E120A3 /* UIImage+GIF.m in Sources */,
 				6AAA62001E1CC46500ADEBFF /* MJRefreshBackGifFooter.m in Sources */,
 				6A337CD11E1D411F00E120A3 /* LoginViewController.m in Sources */,
+				6A4444301E20929E00B63013 /* LoginView.m in Sources */,
 				6A337C891E1D3B7200E120A3 /* UIImageView+HighlightedWebCache.m in Sources */,
 				6AAA62091E1CC46500ADEBFF /* UIScrollView+MJRefresh.m in Sources */,
 				6A5677FD1E1D6CDA0026739E /* StoreViewController.m in Sources */,
+				6A4444551E20AC3100B63013 /* SVProgressAnimatedView.m in Sources */,
 				6AAA621E1E1CC54800ADEBFF /* NSArray+FirstLetterArray.m in Sources */,
 				6A337CDF1E1D5D8F00E120A3 /* MeViewController.m in Sources */,
 				6A337CA01E1D3CAC00E120A3 /* AFURLRequestSerialization.m in Sources */,
 				6A337CAF1E1D3E0E00E120A3 /* Device.m in Sources */,
 				6A337C881E1D3B7200E120A3 /* UIImage+MultiFormat.m in Sources */,
+				6A4444541E20AC3100B63013 /* SVIndefiniteAnimatedView.m in Sources */,
 				6A337C831E1D3B7200E120A3 /* SDWebImageDownloaderOperation.m in Sources */,
 				6A337C8B1E1D3B7200E120A3 /* UIView+WebCache.m in Sources */,
 				6A337CD41E1D413300E120A3 /* PlayerViewController.m in Sources */,
@@ -860,6 +967,7 @@
 				6A337C7C1E1D3B7200E120A3 /* NSData+ImageContentType.m in Sources */,
 				6A337C821E1D3B7200E120A3 /* SDWebImageDownloader.m in Sources */,
 				6A56781A1E1D77070026739E /* IModule.m in Sources */,
+				6A4444581E20AC3100B63013 /* SVRadialGradientLayer.m in Sources */,
 				6AAA62051E1CC46500ADEBFF /* MJRefreshStateHeader.m in Sources */,
 				6AAA62021E1CC46500ADEBFF /* MJRefreshBackStateFooter.m in Sources */,
 				6AAA61FD1E1CC46500ADEBFF /* MJRefreshAutoGifFooter.m in Sources */,

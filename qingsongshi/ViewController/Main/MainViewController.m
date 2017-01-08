@@ -17,34 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setNeedsStatusBarAppearanceUpdate];
 }
 
--(UIViewController*)getTopViewController
-{
-    UIViewController *vc        = self.selectedViewController;
-    if ([vc isKindOfClass:[UINavigationController class]]) {
-        UINavigationController *nvc = (UINavigationController*)vc;
-        vc                          = nvc.viewControllers.lastObject;
-        
-    }
-
-    return vc;
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-{
-    NSUInteger mask = [[self getTopViewController] supportedInterfaceOrientations];
-    
-    return mask;
-}
-
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
-
-- (BOOL)shouldAutorotate
-{
-    return YES;
-}
 @end

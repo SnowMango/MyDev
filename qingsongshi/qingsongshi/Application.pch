@@ -13,8 +13,27 @@
 #import "UIImageView+WebCache.h"
 #import "UCloudMediaPlayer.h"
 #import "UCloudMediaPlayback.h"
-
+#import "SVProgressHUD.h"
+#import "MBProgressHUD.h"
 #import "UIScrollView+Extension.h"
 #import "UIViewExt.h"
 #import <AVKit/AVKit.h>
+
+#define SuppressPerformSelectorLeakWarning(Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)
+
+#define GetValueSuppressPerformSelectorLeakWarning(value ,Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+value = Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)
+
+
 #endif /* Application_pch */

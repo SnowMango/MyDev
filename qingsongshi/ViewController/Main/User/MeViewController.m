@@ -8,6 +8,8 @@
 
 #import "MeViewController.h"
 #import "User.h"
+#import "SDWebImageManager.h"
+#import "AppDelegate.h"
 @interface MeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *userIconIV;
 @property (weak, nonatomic) IBOutlet UILabel *NickNameLb;
@@ -31,7 +33,27 @@
     self.roleNameLb.text = self.loginUser.roleName;
     self.userIdentifierLb.text = self.loginUser.identifier;
     self.tableView.tableFooterView = [UIView new];
+    
+    self.tableView.separatorColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1];
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 0);
 }
+
+- (void)exitLogin
+{
+    RootViewController *root = (RootViewController *)self.view.window.rootViewController;
+    [root exitLogin];
+}
+
+#pragma mark - 缓存
+- (void)clearCache
+{
+    [SVProgressHUD show];
+    [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{
+        [SVProgressHUD dismiss];
+        [self.tableView reloadData];
+    }];
+}
+
 - (NSString *)cacheSize
 {
     NSInteger size = [[SDImageCache sharedImageCache] getSize];
@@ -42,10 +64,17 @@
 - (void)selectIndex:(NSInteger)index
 {
     NSLog(@"--select--%@",[self functionName][index]);
-    
+    SEL selector = NSSelectorFromString([self functionSelector][index]);
+    if ([self respondsToSelector:selector]) {
+        SuppressPerformSelectorLeakWarning([self performSelector:selector withObject:nil]);
+    }
 }
 
-
+- (NSArray *)functionSelector
+{
+    return @[@"me_6",@"4a",@"line",@"me_1",@"me_3",
+             @"me_2",@"line",@"clearCache",@"exitLogin"];
+}
 - (NSArray *)functionIcon
 {
     return @[@"me_6",@"4a",@"line",@"me_1",@"me_3",
