@@ -18,7 +18,7 @@
 - (void)viewDidLoad {   
     [super viewDidLoad];
     LoginView *view = (LoginView*)self.view;
-    NSString * defaultUser = [self lastUsers];
+    NSString * defaultUser = [[self localUserList] firstObject];
     [view loadSubView];
     view.titleLabel.text = @"我是一只猫头鹰";
     view.titleLabel.textColor = [UIColor whiteColor];
@@ -55,7 +55,7 @@
 
 - (NSArray *)localUserList
 {
-    return @[@"admin", @"shenzy", @"feng"];
+    return @[@"admin"];
 }
 
 - (id)lastUsers
