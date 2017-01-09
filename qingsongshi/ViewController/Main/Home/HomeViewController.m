@@ -44,9 +44,7 @@
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
     self.tableView.rowHeight = 135;
-    baseOrgHeigh = CGRectGetHeight(self.baseFuncView.frame);
-    moduleOrgHeigh = CGRectGetHeight(self.moduleView.frame);
-    tableViewOrgBottom = CGRectGetMaxY(self.tableView.frame);
+   
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(autoMove:)];
     [self.view addGestureRecognizer:pan];
     
@@ -68,11 +66,23 @@
     tableViewSumHiegh += CGRectGetHeight(self.tableView.tableHeaderView.frame);
     tableViewSumHiegh += CGRectGetHeight(self.tableView.tableFooterView.frame);
     
+    [self.view setNeedsLayout];
+    [self.view layoutIfNeeded];
+    
+    baseOrgHeigh = CGRectGetHeight(self.baseFuncView.frame);
+    moduleOrgHeigh = CGRectGetHeight(self.moduleView.frame);
+    tableViewOrgBottom = CGRectGetMaxY(self.tableView.frame) - self.tabBarController.tabBar.height;
+    
+}
+
+- (void)viewWillLayoutSubviews
+{
     
 }
 
 - (void)autoMove:(UIPanGestureRecognizer *)pan
 {
+    
     CGFloat offset = [pan translationInView:self.view].y;
     CGFloat toolsHeigh = CGRectGetHeight(self.otherToolsView1.frame);
     if (pan.state == UIGestureRecognizerStateBegan){
@@ -81,6 +91,7 @@
     else if (pan.state == UIGestureRecognizerStateChanged) {
         CGFloat currentOffset = viewOffset + offset;
         NSLog(@"currentOffset = %.2f", currentOffset);
+        
         if (currentOffset < 0) {
             CGFloat maxValue = baseOrgHeigh -OFFSET_CHANGE + moduleOrgHeigh + tableViewSumHiegh - tableViewOrgBottom + toolsHeigh;
             if (maxValue + currentOffset < 0 ) {
@@ -133,7 +144,6 @@
         self.baseFuncView.height = baseOrgHeigh + currentOffset;
         self.baseFuncView.top = toolsHeigh + currentOffset;
         self.moduleView.top = self.baseFuncView.bottom;
-        
         CGFloat alpha = 1 + currentOffset/OFFSET_CHANGE*0.5;
         for (UIView * view in self.baseFuncView.subviews) {
             view.hidden = NO;
@@ -145,15 +155,14 @@
         self.otherToolsView1.hidden = NO;
         self.otherToolsView2.hidden = YES;
         
-    }else if(currentOffset > OFFSET_CHANGE - baseOrgHeigh){
+    }else if(currentOffset >= OFFSET_CHANGE - baseOrgHeigh){
 #pragma mark - step 2
-        self.baseFuncView.top = toolsHeigh - OFFSET_CHANGE;
         self.baseFuncView.height = baseOrgHeigh + currentOffset;
+        self.baseFuncView.top = toolsHeigh  - OFFSET_CHANGE;
         self.moduleView.top = self.baseFuncView.bottom;
-        CGFloat alpha = 0.5 - (currentOffset)/( baseOrgHeigh - OFFSET_CHANGE)*0.5 ;
+        CGFloat alpha = 0.5 - (currentOffset)/( baseOrgHeigh - OFFSET_CHANGE)*0.5;
         for (UIView * view in self.baseFuncView.subviews) {
             view.hidden = YES;
-            view.alpha = alpha;
         }
         self.otherToolsView2.hidden = NO;
         self.otherToolsView1.hidden = YES;
@@ -165,11 +174,11 @@
     }
     else if(currentOffset >= OFFSET_CHANGE-baseOrgHeigh - moduleOrgHeigh){
 #pragma mark - step 3
-        self.baseFuncView.height =  OFFSET_CHANGE;
+        self.baseFuncView.top = toolsHeigh  - OFFSET_CHANGE;
+        self.baseFuncView.height = OFFSET_CHANGE;
         self.moduleView.bottom = moduleOrgHeigh+currentOffset -OFFSET_CHANGE + baseOrgHeigh + toolsHeigh;
     }else{
-#pragma mark - step 4
-        self.moduleView.bottom = toolsHeigh;
+#pragma mark - step
         CGFloat value;
         if (offset < 0) {
             value = currentOffset - OFFSET_CHANGE + baseOrgHeigh + moduleOrgHeigh;
@@ -200,7 +209,6 @@
         org.y= self.tableView.contentOffset.y;
     }
     return org.y;
-    
 }
 
 - (void)viewPanEnd
