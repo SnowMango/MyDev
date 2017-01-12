@@ -10,19 +10,14 @@
 #import <AVKit/AVKit.h>
 #import "UIScrollView+Extension.h"
 
-#define OFFSET_CHANGE 30.0
+#define OFFSET_CHANGE 20.0
 
-#define CHANGE_TOOLS 30.0
+#define OFFSET_REFRESH 64.0
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
-    CGFloat viewOffset;
-    CGFloat tableViewSumHiegh;
-    
-    CGFloat baseOrgHeigh;
-    CGFloat moduleOrgHeigh;
-    CGFloat tableViewOrgOffset;
-    CGFloat tableViewOrgBottom;
+    CGFloat contentViewOrgHeigh;
+    CGFloat baseFuncViewOrgHeigh;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *otherToolsView1;
@@ -31,120 +26,125 @@
 @property (weak, nonatomic) IBOutlet UIView *moduleView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray * scrollData;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *scrollContentView;
+@property (weak, nonatomic) IBOutlet UIView *scrollTableContentView;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollContentHeigh;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *baseFuncViewHeigh;
+
+@property (copy, nonatomic) void (^refreshData)(void);
+@property (assign) BOOL isRefreshing;
 
 @end
 
 @implementation HomeViewController
 - (void)dealloc
 {
+    [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
-    self.tableView.rowHeight = 135;
-   
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(autoMove:)];
-    [self.view addGestureRecognizer:pan];
-    
-    UIPanGestureRecognizer *tableViewPan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(autoMove:)];
-    [self.tableView addGestureRecognizer:tableViewPan];
-    
-    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), 40)];
-    self.tableView.tableFooterView.backgroundColor =[UIColor colorWithRed:231/255.0 green:231.0/255 blue:231/255.0 alpha:1];
-    NSInteger count = [self tableView:self.tableView numberOfRowsInSection:0];
-    if([self respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)]){
-        for (int i = 0; i < count; i++) {
-            tableViewSumHiegh += [self tableView:self.tableView
-                         heightForRowAtIndexPath:
-                                  [NSIndexPath indexPathForRow:i inSection:0]];
-        }
-    }else{
-        tableViewSumHiegh = count*self.tableView.rowHeight;
-    }
-    tableViewSumHiegh += CGRectGetHeight(self.tableView.tableHeaderView.frame);
-    tableViewSumHiegh += CGRectGetHeight(self.tableView.tableFooterView.frame);
-    
+    self.scrollView.delegate = self;
     [self.view setNeedsLayout];
     [self.view layoutIfNeeded];
+   
     
-    baseOrgHeigh = CGRectGetHeight(self.baseFuncView.frame);
-    moduleOrgHeigh = CGRectGetHeight(self.moduleView.frame);
-    tableViewOrgBottom = CGRectGetMaxY(self.tableView.frame) - self.tabBarController.tabBar.height;
+    [self.scrollView.panGestureRecognizer addTarget:self action:@selector(autoMove:)];
     
+    self.tableView.rowHeight = 135;
+    int section = 0;
+    NSInteger count = [self tableView: self.tableView numberOfRowsInSection:section];
+    for (int i = 0; i< count; i++) {
+        UITableViewCell* cell = [self tableView:self.tableView cellForRowAtIndexPath: [NSIndexPath indexPathForRow:i inSection:section]];
+        cell.frame = CGRectMake(0, i*self.tableView.rowHeight, CGRectGetWidth(self.scrollView.frame), self.tableView.rowHeight);
+        [self.scrollTableContentView addSubview:cell];
+    }
+    baseFuncViewOrgHeigh = CGRectGetHeight(self.baseFuncView.frame);
+    contentViewOrgHeigh = baseFuncViewOrgHeigh + CGRectGetHeight(self.moduleView.frame)+ count*self.tableView.rowHeight;
+    self.scrollContentHeigh.constant = contentViewOrgHeigh;
+    
+    [self.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
+    
+    __weak typeof(self) weakSelf = self;
+    self.refreshData = ^(){
+        [weakSelf questSeverData];
+    };
 }
 
-- (void)viewWillLayoutSubviews
+- (void)questSeverData
 {
-    
+    [self performSelector:@selector(endRefreshing) withObject:nil afterDelay:2];
 }
 
+
+#pragma mark - KVO ScrollView
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"contentOffset"]) {
+        CGFloat offset = [change[NSKeyValueChangeNewKey] CGPointValue].y;
+        
+        [self viewPanChange:offset];
+    }
+}
+
+#pragma mark - ScrollView Move
 - (void)autoMove:(UIPanGestureRecognizer *)pan
 {
-    
     CGFloat offset = [pan translationInView:self.view].y;
-    CGFloat toolsHeigh = CGRectGetHeight(self.otherToolsView1.frame);
-    if (pan.state == UIGestureRecognizerStateBegan){
-        tableViewOrgOffset = self.tableView.contentOffset.y;
-    }
-    else if (pan.state == UIGestureRecognizerStateChanged) {
-        CGFloat currentOffset = viewOffset + offset;
-        NSLog(@"currentOffset = %.2f", currentOffset);
+    if  (offset > 0 && self.scrollView.contentOffset.y <=0) {
         
-        if (currentOffset < 0) {
-            CGFloat maxValue = baseOrgHeigh -OFFSET_CHANGE + moduleOrgHeigh + tableViewSumHiegh - tableViewOrgBottom + toolsHeigh;
-            if (maxValue + currentOffset < 0 ) {
-                offset = viewOffset - maxValue  ;
-                return;
+        if (pan.state == UIGestureRecognizerStateBegan || pan.state == UIGestureRecognizerStateChanged ) {
+            if (self.isRefreshing) {
+                offset += OFFSET_REFRESH;
             }
-            [self viewPanChange:offset];
-        }else {
-            [self tablePanChange:-currentOffset];
-        }
-    }
-    else{
-        viewOffset += offset;
-        [UIView animateWithDuration:0.25 animations:^{
-            if (viewOffset > 0 || viewOffset < OFFSET_CHANGE -baseOrgHeigh -moduleOrgHeigh) {
-                CGFloat tabOffset = [self tablePanEnd];
-                if (viewOffset >0) {
-                    viewOffset = 0;
-                }else{
-                    CGFloat flag = viewOffset + tabOffset -OFFSET_CHANGE +baseOrgHeigh + moduleOrgHeigh;
-                    if (flag < 0) {
-                        viewOffset -= flag;
-                    }
+            if (offset > 200) {
+                offset = 200;
+            }
+            self.scrollTableContentView.transform = CGAffineTransformMakeTranslation(0, offset);
+        }else{
+            if (offset >= OFFSET_REFRESH ) {
+                [self begainRefreshing];
+                if (self.refreshData && !self.isRefreshing) {
+                    self.refreshData();
                 }
+            }else{
+                [self endRefreshing];
             }
-            [self viewPanEnd];
-        }];
+        }
     }
 }
 
-- (void)tablePanChange:(CGFloat)offset
+#pragma mark - Owner Refresh
+- (void)endRefreshing
 {
-    CGFloat newY = tableViewOrgOffset + offset;
-    CGPoint newOffset = {self.tableView.contentOffset.x,
-        newY };
-    [self.tableView setContentOffset:newOffset];
-    if (offset <-100) {
-        newOffset.y = 0;
-        [self.tableView setContentOffset:newOffset ];
-    }
+    self.isRefreshing = NO;
+    [UIView animateWithDuration:0.25 animations:^{
+        self.scrollTableContentView.transform = CGAffineTransformIdentity;
+    }];
 }
-#pragma mark - 拖动
+
+- (void)begainRefreshing
+{
+    self.isRefreshing = YES;
+    [UIView animateWithDuration:0.25 animations:^{
+        self.scrollTableContentView.transform = CGAffineTransformMakeTranslation(0, OFFSET_REFRESH);
+    }];
+}
+
+#pragma mark - Scroll Animation
 - (void)viewPanChange:(CGFloat)offset
 {
-    CGFloat toolsHeigh = CGRectGetHeight(self.otherToolsView1.frame);
-    
-    CGFloat currentOffset = viewOffset + offset;
-    if (currentOffset >= -OFFSET_CHANGE) {
-#pragma mark - step 1
-        self.baseFuncView.height = baseOrgHeigh + currentOffset;
-        self.baseFuncView.top = toolsHeigh + currentOffset;
-        self.moduleView.top = self.baseFuncView.bottom;
-        CGFloat alpha = 1 + currentOffset/OFFSET_CHANGE*0.5;
+
+    CGFloat currentOffset = offset;
+    if (currentOffset <= OFFSET_CHANGE) {
+        CGFloat alpha = 1 - currentOffset/OFFSET_CHANGE*0.5;
+        if (currentOffset <= OFFSET_CHANGE) {
+            self.baseFuncViewHeigh.constant = baseFuncViewOrgHeigh -currentOffset;
+            self.scrollContentHeigh.constant = contentViewOrgHeigh - currentOffset;
+        }
         for (UIView * view in self.baseFuncView.subviews) {
             view.hidden = NO;
             view.alpha =alpha;
@@ -152,15 +152,16 @@
         for (UIView * view in self.otherToolsView1.subviews) {
             view.alpha =alpha;
         }
+
         self.otherToolsView1.hidden = NO;
         self.otherToolsView2.hidden = YES;
         
-    }else if(currentOffset >= OFFSET_CHANGE - baseOrgHeigh){
-#pragma mark - step 2
-        self.baseFuncView.height = baseOrgHeigh + currentOffset;
-        self.baseFuncView.top = toolsHeigh  - OFFSET_CHANGE;
-        self.moduleView.top = self.baseFuncView.bottom;
-        CGFloat alpha = 0.5 - (currentOffset)/( baseOrgHeigh - OFFSET_CHANGE)*0.5;
+    }else if(currentOffset <= contentViewOrgHeigh - OFFSET_CHANGE ){
+        
+        CGFloat alpha = 0.5 + (currentOffset)/(baseFuncViewOrgHeigh - OFFSET_CHANGE)*0.5;
+        for (UIView * view in self.otherToolsView2.subviews) {
+            view.alpha =alpha;
+        }
         for (UIView * view in self.baseFuncView.subviews) {
             view.hidden = YES;
         }
@@ -172,96 +173,35 @@
             }
         }
     }
-    else if(currentOffset >= OFFSET_CHANGE-baseOrgHeigh - moduleOrgHeigh){
-#pragma mark - step 3
-        self.baseFuncView.top = toolsHeigh  - OFFSET_CHANGE;
-        self.baseFuncView.height = OFFSET_CHANGE;
-        self.moduleView.bottom = moduleOrgHeigh+currentOffset -OFFSET_CHANGE + baseOrgHeigh + toolsHeigh;
-    }else{
-#pragma mark - step
-        CGFloat value;
-        if (offset < 0) {
-            value = currentOffset - OFFSET_CHANGE + baseOrgHeigh + moduleOrgHeigh;
-            [self.tableView setContentOffset:CGPointMake(0, -value)];
-        }else{
-            value = -offset;
-            [self tablePanChange:value];
-        }
-    }
-    self.tableView.top = self.moduleView.bottom;
-    self.tableView.height = tableViewOrgBottom - self.tableView.top;
+    [self.scrollView layoutIfNeeded];
+    
 }
 
-- (CGFloat)tablePanEnd
+#pragma mark - Tools View Change
+- (void)viewPanEnd:(CGFloat )offset
 {
-    CGPoint org = {self.tableView.contentOffset.x,
-        0 };
-    CGFloat maxOffset = tableViewSumHiegh - CGRectGetHeight(self.tableView.frame);
-    if (maxOffset <0 ) {
-        maxOffset = 0;
-    }
-    if (self.tableView.contentOffset.y < 0) {
-        [self.tableView setContentOffset:org];
-    }else if (self.tableView.contentOffset.y > maxOffset){
-        org.y= maxOffset;
-        [self.tableView setContentOffset:org];
-    }else{
-        org.y= self.tableView.contentOffset.y;
-    }
-    return org.y;
-}
-
-- (void)viewPanEnd
-{
-    if (viewOffset > -CHANGE_TOOLS) {
+    if (offset < OFFSET_CHANGE) {
         [self viewStatus1];
-        viewOffset = 0;
-    }else if (viewOffset > OFFSET_CHANGE -baseOrgHeigh){
-        [self viewStatus3];
-        viewOffset = OFFSET_CHANGE - baseOrgHeigh;
+    }else if (offset < baseFuncViewOrgHeigh - OFFSET_CHANGE ){
+        [self viewStatus2];
     }
 }
 
 - (void)viewStatus1
 {
-    for (UIView * view in self.baseFuncView.subviews) {
-        view.hidden = NO;
-        view.alpha = 1;
-    }
-    for (UIView * view in self.otherToolsView1.subviews) {
-        view.alpha = 1;
-    }
-    CGFloat toolsHeigt = CGRectGetHeight(self.otherToolsView1.frame);
-    self.otherToolsView1.hidden = NO;
-    self.otherToolsView2.hidden = YES;
-    self.baseFuncView.height = baseOrgHeigh;
-    self.baseFuncView.top = toolsHeigt;
-    self.moduleView.top = self.baseFuncView.bottom;
-    self.tableView.height = self.moduleView.bottom - self.tableView.bottom;
-    self.tableView.top = self.moduleView.bottom;
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.scrollView setContentOffset:CGPointZero];
+    }];
 }
 
-- (void)viewStatus3
+- (void)viewStatus2
 {
-    for (UIView * view in self.baseFuncView.subviews) {
-        view.hidden = YES;
-    }
-    for (UIView * view in self.otherToolsView2.subviews) {
-        if (view.tag) {
-            view.top = 29;
-        }
-    }
-    CGFloat toolsHeigt = CGRectGetHeight(self.otherToolsView1.frame);
-    self.otherToolsView2.hidden = NO;
-    self.otherToolsView1.hidden = YES;
-    self.baseFuncView.height = OFFSET_CHANGE;
-    self.baseFuncView.top = toolsHeigt - OFFSET_CHANGE;
-    self.moduleView.top = self.baseFuncView.bottom;
-    self.tableView.height = self.moduleView.bottom - self.tableView.bottom;
-    self.tableView.top = self.moduleView.bottom;
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.scrollView setContentOffset:CGPointMake(0, baseFuncViewOrgHeigh - OFFSET_CHANGE)];
+    }];
 }
 
-
+#pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 4;
 }
@@ -274,9 +214,18 @@
     [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     return cell;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    return 135;
+    if (!decelerate) {
+        [self scrollViewDidEndDecelerating:scrollView];
+    }
 }
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self viewPanEnd:scrollView.contentOffset.y];
+}
+
 
 @end
