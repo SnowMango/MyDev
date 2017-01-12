@@ -51,7 +51,6 @@
     [self.view setNeedsLayout];
     [self.view layoutIfNeeded];
    
-    
     [self.scrollView.panGestureRecognizer addTarget:self action:@selector(autoMove:)];
     
     self.tableView.rowHeight = 135;
@@ -63,7 +62,11 @@
         [self.scrollTableContentView addSubview:cell];
     }
     baseFuncViewOrgHeigh = CGRectGetHeight(self.baseFuncView.frame);
-    contentViewOrgHeigh = baseFuncViewOrgHeigh + CGRectGetHeight(self.moduleView.frame)+ count*self.tableView.rowHeight;
+    contentViewOrgHeigh = baseFuncViewOrgHeigh + CGRectGetHeight(self.moduleView.frame)+10 + count*self.tableView.rowHeight;
+    CGFloat heigh = CGRectGetHeight(self.scrollView.frame);
+    if (contentViewOrgHeigh < heigh) {
+        contentViewOrgHeigh = heigh + baseFuncViewOrgHeigh + CGRectGetHeight(self.moduleView.frame) - CGRectGetHeight(self.tabBarController.tabBar.frame);
+    }
     self.scrollContentHeigh.constant = contentViewOrgHeigh;
     
     [self.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
@@ -76,7 +79,7 @@
 
 - (void)questSeverData
 {
-    [self performSelector:@selector(endRefreshing) withObject:nil afterDelay:2];
+    [self performSelector:@selector(endRefreshing) withObject:nil afterDelay:10];
 }
 
 
@@ -105,11 +108,11 @@
             }
             self.scrollTableContentView.transform = CGAffineTransformMakeTranslation(0, offset);
         }else{
-            if (offset >= OFFSET_REFRESH ) {
-                [self begainRefreshing];
+            if (offset >= OFFSET_REFRESH || self.isRefreshing) {
                 if (self.refreshData && !self.isRefreshing) {
                     self.refreshData();
                 }
+                [self begainRefreshing];
             }else{
                 [self endRefreshing];
             }
@@ -120,18 +123,22 @@
 #pragma mark - Owner Refresh
 - (void)endRefreshing
 {
-    self.isRefreshing = NO;
+    self.isRefreshing = NO;    
     [UIView animateWithDuration:0.25 animations:^{
         self.scrollTableContentView.transform = CGAffineTransformIdentity;
     }];
+    
+    [self.scrollView layoutIfNeeded];
 }
 
 - (void)begainRefreshing
 {
     self.isRefreshing = YES;
+
     [UIView animateWithDuration:0.25 animations:^{
         self.scrollTableContentView.transform = CGAffineTransformMakeTranslation(0, OFFSET_REFRESH);
     }];
+    
 }
 
 #pragma mark - Scroll Animation
@@ -203,7 +210,7 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
