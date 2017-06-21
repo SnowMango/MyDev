@@ -11,3 +11,6 @@
 @interface BaseModel : NSObject<NSCopying, NSMutableCopying>
 
 @end
+
+
+static inline NSDictionary * BaseModelDictionaryProprety(id obj);

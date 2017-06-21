@@ -11,6 +11,7 @@
 
 @implementation BaseModel
 
+
 - (id)copyWithZone:(NSZone *)zone
 {
     id copy = [[self class] allocWithZone:zone];
@@ -26,6 +27,7 @@
             [copy setValue:value forKey:propertyName];
         }
     }
+    free(properties);
     return copy;
 }
 
@@ -44,7 +46,27 @@
             [mutableCopy setValue:value forKey:propertyName];
         }
     }
+    free(properties);
     return mutableCopy;
 }
 
 @end
+
+NSDictionary * BaseModelDictionaryProprety(id obj)
+{
+    NSMutableDictionary *dic =[NSMutableDictionary dictionary];
+    unsigned int propertyCount = 0;
+    objc_property_t * properties = class_copyPropertyList( [obj class], &propertyCount );
+    
+    for ( NSUInteger i = 0; i < propertyCount; i++ )
+    {
+        const char * name = property_getName(properties[i]);
+        NSString * propertyName = [NSString stringWithCString:name encoding:NSUTF8StringEncoding];
+        NSObject *value = [obj valueForKey:propertyName];
+        if (value) {
+            dic[propertyName] = value;
+        }
+    }
+    free(properties);
+    return dic;
+}

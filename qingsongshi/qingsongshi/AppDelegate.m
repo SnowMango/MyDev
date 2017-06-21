@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "BaseModel.h"
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
 @end
