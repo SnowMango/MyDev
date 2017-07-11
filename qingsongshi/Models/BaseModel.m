@@ -12,47 +12,71 @@
 @implementation BaseModel
 
 
+#pragma mark - NSCoping
 - (id)copyWithZone:(NSZone *)zone
 {
-    id copy = [[self class] allocWithZone:zone];
-    unsigned int propertyCount = 0;
-    objc_property_t * properties = class_copyPropertyList( [self class], &propertyCount );
-    for ( NSUInteger i = 0; i < propertyCount; i++ )
-    {
-        const char * name = property_getName(properties[i]);
-        NSString * propertyName = [NSString stringWithCString:name encoding:NSUTF8StringEncoding];
-        NSObject<NSCopying> * tempValue = [self valueForKey:propertyName];
-        if (tempValue) {
-            id value = [tempValue copy];
-            [copy setValue:value forKey:propertyName];
+    id newObj = [[self class] allocWithZone:zone];
+    NSArray *properties = [self objc_properties];
+    NSDictionary *propertyDic = [self dictionaryWithValuesForKeys:properties];
+    [newObj setValuesForKeysWithDictionary:propertyDic];
+    return newObj;
+}
+#pragma mark - NSMutableCoping
+-(id)mutableCopyWithZone:(NSZone *)zone
+{
+    id newObj = [[self class] allocWithZone:zone];
+    NSArray *properties = [self objc_properties];
+    for (NSString *key in properties) {
+        id value = [self valueForKey:key];
+        if ([value conformsToProtocol:@protocol(NSMutableCopying)]) {
+            value = [value mutableCopy];
         }
+        [newObj setValue:value forKey:key];
     }
-    free(properties);
-    return copy;
+    return newObj;
 }
 
-- (id)mutableCopyWithZone:(NSZone *)zone
+- (NSArray *)objc_properties
 {
-    id mutableCopy = [[self class] allocWithZone:zone];
+    NSMutableArray *properties=[NSMutableArray new];
     unsigned int propertyCount = 0;
-    objc_property_t * properties = class_copyPropertyList( [self class], &propertyCount );
-    for ( NSUInteger i = 0; i < propertyCount; i++ )
-    {
-        const char * name = property_getName(properties[i]);
+    objc_property_t * propertList = class_copyPropertyList( [self class], &propertyCount);
+    for ( NSUInteger i = 0; i < propertyCount; i++ ){
+        const char * name = property_getName(propertList[i]);
         NSString * propertyName = [NSString stringWithCString:name encoding:NSUTF8StringEncoding];
-        NSObject<NSCopying> * tempValue = [self valueForKey:propertyName];
-        if (tempValue) {
-            id value = [tempValue mutableCopy];
-            [mutableCopy setValue:value forKey:propertyName];
-        }
+        [properties addObject:propertyName];
     }
-    free(properties);
-    return mutableCopy;
+    free(propertList);
+    return properties;
 }
 
 @end
 
-NSDictionary * BaseModelDictionaryProprety(id obj)
+@implementation NSObject (PropretyValue)
+
+- (NSDictionary *)propretyValue
+{
+    NSMutableDictionary *dic =[NSMutableDictionary dictionary];
+    unsigned int propertyCount = 0;
+    objc_property_t * properties = class_copyPropertyList( [self class], &propertyCount );
+    
+    for ( NSUInteger i = 0; i < propertyCount; i++ )
+    {
+        const char * name = property_getName(properties[i]);
+        NSString * propertyName = [NSString stringWithCString:name encoding:NSUTF8StringEncoding];
+        id value = [self valueForKey:propertyName];
+        if (value) {
+            dic[propertyName] = value;
+        }
+    }
+    free(properties);
+    return dic;
+}
+
+@end
+
+
+NSDictionary * propretyValueWithObj(id obj)
 {
     NSMutableDictionary *dic =[NSMutableDictionary dictionary];
     unsigned int propertyCount = 0;
@@ -70,3 +94,7 @@ NSDictionary * BaseModelDictionaryProprety(id obj)
     free(properties);
     return dic;
 }
+
+
+
+
