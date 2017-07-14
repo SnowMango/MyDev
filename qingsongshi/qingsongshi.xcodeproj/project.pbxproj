@@ -72,7 +72,6 @@
 		6A5677FD1E1D6CDA0026739E /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5677FC1E1D6CDA0026739E /* StoreViewController.m */; };
 		6A5678001E1D6CF30026739E /* ModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5677FF1E1D6CF30026739E /* ModuleViewController.m */; };
 		6A5678171E1D715A0026739E /* ModuleConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A5678161E1D715A0026739E /* ModuleConfig.plist */; };
-		6A56781A1E1D77070026739E /* IModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5678191E1D77070026739E /* IModule.m */; };
 		6AAA61B11E1CBDAF00ADEBFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA61B01E1CBDAF00ADEBFF /* main.m */; };
 		6AAA61B41E1CBDAF00ADEBFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA61B31E1CBDAF00ADEBFF /* AppDelegate.m */; };
 		6AAA61BF1E1CBDAF00ADEBFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AAA61BE1E1CBDAF00ADEBFF /* Assets.xcassets */; };
@@ -171,7 +170,6 @@
 		6A337C9A1E1D3CAC00E120A3 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		6A337C9B1E1D3CAC00E120A3 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		6A337C9C1E1D3CAC00E120A3 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
-		6A337CA41E1D3D8700E120A3 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		6A337CA51E1D3D8700E120A3 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		6A337CA71E1D3DD500E120A3 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		6A337CA81E1D3DD500E120A3 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
@@ -229,8 +227,7 @@
 		6A5677FE1E1D6CF30026739E /* ModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleViewController.h; sourceTree = "<group>"; };
 		6A5677FF1E1D6CF30026739E /* ModuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleViewController.m; sourceTree = "<group>"; };
 		6A5678161E1D715A0026739E /* ModuleConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ModuleConfig.plist; sourceTree = "<group>"; };
-		6A5678181E1D77070026739E /* IModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IModule.h; sourceTree = "<group>"; };
-		6A5678191E1D77070026739E /* IModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IModule.m; sourceTree = "<group>"; };
+		6AA054A01F15F261006D121D /* BaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		6AAA61AC1E1CBDAF00ADEBFF /* qingsongshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qingsongshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AAA61B01E1CBDAF00ADEBFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6AAA61B21E1CBDAF00ADEBFF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -402,7 +399,7 @@
 		6A337CA31E1D3D2300E120A3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6A337CA41E1D3D8700E120A3 /* BaseModel.h */,
+				6AA054A01F15F261006D121D /* BaseModel.h */,
 				6A337CA51E1D3D8700E120A3 /* BaseModel.m */,
 				6A337CA71E1D3DD500E120A3 /* User.h */,
 				6A337CA81E1D3DD500E120A3 /* User.m */,
@@ -410,8 +407,6 @@
 				6A337CAB1E1D3DEB00E120A3 /* Store.m */,
 				6A337CAD1E1D3E0E00E120A3 /* Device.h */,
 				6A337CAE1E1D3E0E00E120A3 /* Device.m */,
-				6A5678181E1D77070026739E /* IModule.h */,
-				6A5678191E1D77070026739E /* IModule.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -967,7 +962,6 @@
 				6AAA62201E1CC54800ADEBFF /* pinyin.m in Sources */,
 				6A337C7C1E1D3B7200E120A3 /* NSData+ImageContentType.m in Sources */,
 				6A337C821E1D3B7200E120A3 /* SDWebImageDownloader.m in Sources */,
-				6A56781A1E1D77070026739E /* IModule.m in Sources */,
 				6A4444581E20AC3100B63013 /* SVRadialGradientLayer.m in Sources */,
 				6AAA62051E1CC46500ADEBFF /* MJRefreshStateHeader.m in Sources */,
 				6AAA62021E1CC46500ADEBFF /* MJRefreshBackStateFooter.m in Sources */,
@@ -1091,7 +1085,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = qingsongshi/Application.pch;
 				INFOPLIST_FILE = qingsongshi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1112,7 +1106,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = qingsongshi/Application.pch;
 				INFOPLIST_FILE = qingsongshi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

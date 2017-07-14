@@ -268,6 +268,7 @@
 #pragma mark - 设置音量
 - (void)playerVolume:(float)volume
 {
+
     [MPMusicPlayerController applicationMusicPlayer].volume = volume;
 }
 

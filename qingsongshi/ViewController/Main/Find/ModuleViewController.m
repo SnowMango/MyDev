@@ -23,7 +23,6 @@
 #define SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
 
 #import "ModuleViewController.h"
-#import "IModule.h"
 @interface ModuleViewController ()<UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -36,15 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSString *fileName = [NSString stringWithFormat:@"%@/ModuleConfig.plist",[NSBundle mainBundle].bundlePath];
-    NSArray *moduleArray = [NSArray arrayWithContentsOfFile:fileName];
-    NSMutableArray *temp = [NSMutableArray new];
-    for (NSDictionary *module in moduleArray) {
-        IModule *m = [[IModule alloc] init];
-        m.moduleName = module[@"name"];
-        [temp addObject:m];
-    }
-    self.modules = temp;
+    
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
@@ -70,28 +61,17 @@
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return ceil(self.modules.count/3.0);
+    return 0;
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    if (++section*3 > self.modules.count) {
-        return self.modules.count%3;
-    }
-    return 3;
+    
+    return 0;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ModuleCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ModuleCellID" forIndexPath:indexPath];
-    NSInteger index = indexPath.section*3+indexPath.row;
-    if (index < self.modules.count) {
-        id<IULCModule>module = self.modules[index];
-//        cell.imageView.image = [module moduleIcon];
-        cell.titleLabel.text = [module moduleName];
-    }else{
-        cell.imageView.image = nil;
-        cell.titleLabel.text = nil;
-    }
     return cell;
 }
 
