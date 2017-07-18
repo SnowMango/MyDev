@@ -1,0 +1,4 @@
+platform :ios, ‘8.0’
+target 'qingsongshi' do
+  pod "PLPlayerKit", :path => "../PLPlayerKit"
+end

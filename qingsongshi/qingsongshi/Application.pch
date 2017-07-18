@@ -37,3 +37,9 @@ _Pragma("clang diagnostic pop") \
 
 
 #endif /* Application_pch */
+
+#if __OBJC__
+
+#import "ZFDefaultHandle.h"
+
+#endif

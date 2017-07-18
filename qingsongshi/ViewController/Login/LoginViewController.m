@@ -35,6 +35,8 @@
             [SVProgressHUD dismissWithDelay:0.5 completion:nil];
         }
     }];
+//    NSString *uuid = [NSUUID UUID].UUIDString;
+  
 }
 
 - (BOOL)checkLoginInformation:(NSString *)acount password:(NSString*)password

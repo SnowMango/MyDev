@@ -72,6 +72,22 @@
 		6A5677FD1E1D6CDA0026739E /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5677FC1E1D6CDA0026739E /* StoreViewController.m */; };
 		6A5678001E1D6CF30026739E /* ModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5677FF1E1D6CF30026739E /* ModuleViewController.m */; };
 		6A5678171E1D715A0026739E /* ModuleConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A5678161E1D715A0026739E /* ModuleConfig.plist */; };
+		6A7B98601F1DD926000FD224 /* SVPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7B985F1F1DD926000FD224 /* SVPlayerView.m */; };
+		6A7B98741F1DE05B000FD224 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B986B1F1DE05B000FD224 /* libavcodec.a */; };
+		6A7B98751F1DE05B000FD224 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B986C1F1DE05B000FD224 /* libavformat.a */; };
+		6A7B98761F1DE05B000FD224 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B986D1F1DE05B000FD224 /* libavutil.a */; };
+		6A7B98771F1DE05B000FD224 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B986E1F1DE05B000FD224 /* libcrypto.a */; };
+		6A7B98781F1DE05B000FD224 /* libPLPlayerKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B986F1F1DE05B000FD224 /* libPLPlayerKit.a */; };
+		6A7B98791F1DE05B000FD224 /* libspeex.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B98701F1DE05B000FD224 /* libspeex.a */; };
+		6A7B987A1F1DE05B000FD224 /* libspeexdsp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B98711F1DE05B000FD224 /* libspeexdsp.a */; };
+		6A7B987B1F1DE05B000FD224 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B98721F1DE05B000FD224 /* libssl.a */; };
+		6A7B987C1F1DE05B000FD224 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B98731F1DE05B000FD224 /* libswresample.a */; };
+		6A7B987E1F1DE13D000FD224 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B987D1F1DE13D000FD224 /* libiconv.tbd */; };
+		6A7B98801F1DE14A000FD224 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B987F1F1DE14A000FD224 /* libc++.tbd */; };
+		6A7B98821F1DE15E000FD224 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B98811F1DE15E000FD224 /* libbz2.tbd */; };
+		6A7B98841F1DE1AE000FD224 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B98831F1DE1AE000FD224 /* OpenGLES.framework */; };
+		6A7B98861F1DE1BB000FD224 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B98851F1DE1BB000FD224 /* Accelerate.framework */; };
+		6A7B98881F1DE1DC000FD224 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B98871F1DE1DC000FD224 /* MediaPlayer.framework */; };
 		6AAA61B11E1CBDAF00ADEBFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA61B01E1CBDAF00ADEBFF /* main.m */; };
 		6AAA61B41E1CBDAF00ADEBFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA61B31E1CBDAF00ADEBFF /* AppDelegate.m */; };
 		6AAA61BF1E1CBDAF00ADEBFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AAA61BE1E1CBDAF00ADEBFF /* Assets.xcassets */; };
@@ -113,6 +129,7 @@
 		6AD37CF01E1DEDBC0012B37A /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD37CEF1E1DEDBC0012B37A /* CoreMedia.framework */; };
 		6AD37CF21E1DEDC40012B37A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD37CF11E1DEDC40012B37A /* AudioToolbox.framework */; };
 		6AD37CF41E1DEDD00012B37A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD37CF31E1DEDD00012B37A /* AVFoundation.framework */; };
+		6AE060661F1DAA15003829F5 /* ZFDefaultHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE060651F1DAA15003829F5 /* ZFDefaultHandle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -227,6 +244,28 @@
 		6A5677FE1E1D6CF30026739E /* ModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleViewController.h; sourceTree = "<group>"; };
 		6A5677FF1E1D6CF30026739E /* ModuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleViewController.m; sourceTree = "<group>"; };
 		6A5678161E1D715A0026739E /* ModuleConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ModuleConfig.plist; sourceTree = "<group>"; };
+		6A7B985E1F1DD926000FD224 /* SVPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPlayerView.h; sourceTree = "<group>"; };
+		6A7B985F1F1DD926000FD224 /* SVPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVPlayerView.m; sourceTree = "<group>"; };
+		6A7B98651F1DE05B000FD224 /* PLPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlayer.h; sourceTree = "<group>"; };
+		6A7B98661F1DE05B000FD224 /* PLPlayerEnv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlayerEnv.h; sourceTree = "<group>"; };
+		6A7B98671F1DE05B000FD224 /* PLPlayerError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlayerError.h; sourceTree = "<group>"; };
+		6A7B98681F1DE05B000FD224 /* PLPlayerKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlayerKit.h; sourceTree = "<group>"; };
+		6A7B98691F1DE05B000FD224 /* PLPlayerOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlayerOption.h; sourceTree = "<group>"; };
+		6A7B986B1F1DE05B000FD224 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavcodec.a; sourceTree = "<group>"; };
+		6A7B986C1F1DE05B000FD224 /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavformat.a; sourceTree = "<group>"; };
+		6A7B986D1F1DE05B000FD224 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavutil.a; sourceTree = "<group>"; };
+		6A7B986E1F1DE05B000FD224 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		6A7B986F1F1DE05B000FD224 /* libPLPlayerKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPLPlayerKit.a; sourceTree = "<group>"; };
+		6A7B98701F1DE05B000FD224 /* libspeex.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libspeex.a; sourceTree = "<group>"; };
+		6A7B98711F1DE05B000FD224 /* libspeexdsp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libspeexdsp.a; sourceTree = "<group>"; };
+		6A7B98721F1DE05B000FD224 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
+		6A7B98731F1DE05B000FD224 /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswresample.a; sourceTree = "<group>"; };
+		6A7B987D1F1DE13D000FD224 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		6A7B987F1F1DE14A000FD224 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		6A7B98811F1DE15E000FD224 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		6A7B98831F1DE1AE000FD224 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		6A7B98851F1DE1BB000FD224 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		6A7B98871F1DE1DC000FD224 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		6AA054A01F15F261006D121D /* BaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		6AAA61AC1E1CBDAF00ADEBFF /* qingsongshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qingsongshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AAA61B01E1CBDAF00ADEBFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -300,6 +339,8 @@
 		6AD37CEF1E1DEDBC0012B37A /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		6AD37CF11E1DEDC40012B37A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		6AD37CF31E1DEDD00012B37A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6AE060641F1DAA15003829F5 /* ZFDefaultHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFDefaultHandle.h; sourceTree = "<group>"; };
+		6AE060651F1DAA15003829F5 /* ZFDefaultHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFDefaultHandle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,15 +348,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A7B98881F1DE1DC000FD224 /* MediaPlayer.framework in Frameworks */,
+				6A7B98861F1DE1BB000FD224 /* Accelerate.framework in Frameworks */,
+				6A7B98841F1DE1AE000FD224 /* OpenGLES.framework in Frameworks */,
+				6A7B98821F1DE15E000FD224 /* libbz2.tbd in Frameworks */,
+				6A7B98801F1DE14A000FD224 /* libc++.tbd in Frameworks */,
+				6A7B987E1F1DE13D000FD224 /* libiconv.tbd in Frameworks */,
 				6AB37CEE1E1F38FC00ABF883 /* AVKit.framework in Frameworks */,
+				6A7B98791F1DE05B000FD224 /* libspeex.a in Frameworks */,
 				6AD37CF41E1DEDD00012B37A /* AVFoundation.framework in Frameworks */,
+				6A7B98751F1DE05B000FD224 /* libavformat.a in Frameworks */,
+				6A7B98781F1DE05B000FD224 /* libPLPlayerKit.a in Frameworks */,
 				6AD37CF21E1DEDC40012B37A /* AudioToolbox.framework in Frameworks */,
 				6AD37CF01E1DEDBC0012B37A /* CoreMedia.framework in Frameworks */,
 				6AD37CEE1E1DEDAB0012B37A /* VideoToolbox.framework in Frameworks */,
+				6A7B98761F1DE05B000FD224 /* libavutil.a in Frameworks */,
 				6AD37CEC1E1DED9A0012B37A /* libz.tbd in Frameworks */,
+				6A7B987C1F1DE05B000FD224 /* libswresample.a in Frameworks */,
 				6A337C8E1E1D3BF900E120A3 /* ImageIO.framework in Frameworks */,
+				6A7B987B1F1DE05B000FD224 /* libssl.a in Frameworks */,
+				6A7B98741F1DE05B000FD224 /* libavcodec.a in Frameworks */,
+				6A7B98771F1DE05B000FD224 /* libcrypto.a in Frameworks */,
 				6AAA62161E1CC52300ADEBFF /* CoreGraphics.framework in Frameworks */,
 				6AD37C9C1E1DECA00012B37A /* libUCloudMediaPlayer.a in Frameworks */,
+				6A7B987A1F1DE05B000FD224 /* libspeexdsp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +463,8 @@
 				6A337CAB1E1D3DEB00E120A3 /* Store.m */,
 				6A337CAD1E1D3E0E00E120A3 /* Device.h */,
 				6A337CAE1E1D3E0E00E120A3 /* Device.m */,
+				6AE060641F1DAA15003829F5 /* ZFDefaultHandle.h */,
+				6AE060651F1DAA15003829F5 /* ZFDefaultHandle.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -451,6 +509,8 @@
 			children = (
 				6A337CD21E1D413300E120A3 /* PlayerViewController.h */,
 				6A337CD31E1D413300E120A3 /* PlayerViewController.m */,
+				6A7B985E1F1DD926000FD224 /* SVPlayerView.h */,
+				6A7B985F1F1DD926000FD224 /* SVPlayerView.m */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -564,6 +624,59 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		6A7B98611F1DE05B000FD224 /* PLPlayerKit */ = {
+			isa = PBXGroup;
+			children = (
+				6A7B98621F1DE05B000FD224 /* Library */,
+			);
+			path = PLPlayerKit;
+			sourceTree = "<group>";
+		};
+		6A7B98621F1DE05B000FD224 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				6A7B98631F1DE05B000FD224 /* include */,
+				6A7B986A1F1DE05B000FD224 /* lib */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		6A7B98631F1DE05B000FD224 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				6A7B98641F1DE05B000FD224 /* PLPlayerKit */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		6A7B98641F1DE05B000FD224 /* PLPlayerKit */ = {
+			isa = PBXGroup;
+			children = (
+				6A7B98651F1DE05B000FD224 /* PLPlayer.h */,
+				6A7B98661F1DE05B000FD224 /* PLPlayerEnv.h */,
+				6A7B98671F1DE05B000FD224 /* PLPlayerError.h */,
+				6A7B98681F1DE05B000FD224 /* PLPlayerKit.h */,
+				6A7B98691F1DE05B000FD224 /* PLPlayerOption.h */,
+			);
+			path = PLPlayerKit;
+			sourceTree = "<group>";
+		};
+		6A7B986A1F1DE05B000FD224 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				6A7B986B1F1DE05B000FD224 /* libavcodec.a */,
+				6A7B986C1F1DE05B000FD224 /* libavformat.a */,
+				6A7B986D1F1DE05B000FD224 /* libavutil.a */,
+				6A7B986E1F1DE05B000FD224 /* libcrypto.a */,
+				6A7B986F1F1DE05B000FD224 /* libPLPlayerKit.a */,
+				6A7B98701F1DE05B000FD224 /* libspeex.a */,
+				6A7B98711F1DE05B000FD224 /* libspeexdsp.a */,
+				6A7B98721F1DE05B000FD224 /* libssl.a */,
+				6A7B98731F1DE05B000FD224 /* libswresample.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 		6AAA61A31E1CBDAF00ADEBFF = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +726,7 @@
 		6AAA61C91E1CC3D300ADEBFF /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				6A7B98611F1DE05B000FD224 /* PLPlayerKit */,
 				6A4444491E20AC3100B63013 /* SVProgressHUD */,
 				6A4444051E1FBF9E00B63013 /* UIViewExt */,
 				6AB37CE91E1F378000ABF883 /* UIScrollView+Extension */,
@@ -743,6 +857,12 @@
 		6AAA62141E1CC51600ADEBFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6A7B98871F1DE1DC000FD224 /* MediaPlayer.framework */,
+				6A7B98851F1DE1BB000FD224 /* Accelerate.framework */,
+				6A7B98831F1DE1AE000FD224 /* OpenGLES.framework */,
+				6A7B98811F1DE15E000FD224 /* libbz2.tbd */,
+				6A7B987F1F1DE14A000FD224 /* libc++.tbd */,
+				6A7B987D1F1DE13D000FD224 /* libiconv.tbd */,
 				6AB37CED1E1F38FC00ABF883 /* AVKit.framework */,
 				6AD37CF31E1DEDD00012B37A /* AVFoundation.framework */,
 				6AD37CF11E1DEDC40012B37A /* AudioToolbox.framework */,
@@ -833,6 +953,7 @@
 					6AAA61AB1E1CBDAF00ADEBFF = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = GVH7JZXR3Q;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -918,6 +1039,7 @@
 				6AAA61F81E1CC46500ADEBFF /* MJRefreshAutoFooter.m in Sources */,
 				6A337C7E1E1D3B7200E120A3 /* SDImageCache.m in Sources */,
 				6A4444571E20AC3100B63013 /* SVProgressHUD.m in Sources */,
+				6AE060661F1DAA15003829F5 /* ZFDefaultHandle.m in Sources */,
 				6A337C8A1E1D3B7200E120A3 /* UIImageView+WebCache.m in Sources */,
 				6A4444331E209F1700B63013 /* RootViewController.m in Sources */,
 				6A5677FA1E1D6CA70026739E /* HomeViewController.m in Sources */,
@@ -952,6 +1074,7 @@
 				6A337C7D1E1D3B7200E120A3 /* NSImage+WebCache.m in Sources */,
 				6A337CA91E1D3DD500E120A3 /* User.m in Sources */,
 				6AAA62041E1CC46500ADEBFF /* MJRefreshNormalHeader.m in Sources */,
+				6A7B98601F1DD926000FD224 /* SVPlayerView.m in Sources */,
 				6AB37CEC1E1F378000ABF883 /* UIScrollView+Extension.m in Sources */,
 				6A337C811E1D3B7200E120A3 /* SDWebImageDecoder.m in Sources */,
 				6A337C9D1E1D3CAC00E120A3 /* AFHTTPSessionManager.m in Sources */,
@@ -1080,6 +1203,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = GVH7JZXR3Q;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1090,9 +1214,13 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Lib/Player",
+					"$(PROJECT_DIR)/Lib/PLPlayerKit/Library/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sh.qingsongshi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ViewController/qingsongshi-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1101,6 +1229,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = GVH7JZXR3Q;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1111,9 +1240,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Lib/Player",
+					"$(PROJECT_DIR)/Lib/PLPlayerKit/Library/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sh.qingsongshi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ViewController/qingsongshi-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
