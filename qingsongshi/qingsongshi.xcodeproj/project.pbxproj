@@ -127,6 +127,7 @@
 		6AF2350B1F1F18F7001F1379 /* player_stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF235051F1F18F7001F1379 /* player_stop@2x.png */; };
 		6AF2350C1F1F18F7001F1379 /* player_playing@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF235061F1F18F7001F1379 /* player_playing@2x.png */; };
 		6AF235271F1F1A20001F1379 /* player_tool_cam@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF235261F1F1A20001F1379 /* player_tool_cam@2x.png */; };
+		6AF235F71F1F60E3001F1379 /* PLPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF235F61F1F60E3001F1379 /* PLPlayerViewController.m */; };
 		DD4C3C64A09A48DF7D9EB610 /* libPods-qingsongshi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EB647199A0D8EF827C3EAA /* libPods-qingsongshi.a */; };
 /* End PBXBuildFile section */
 
@@ -331,6 +332,8 @@
 		6AF235061F1F18F7001F1379 /* player_playing@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_playing@2x.png"; sourceTree = "<group>"; };
 		6AF235261F1F1A20001F1379 /* player_tool_cam@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_tool_cam@2x.png"; sourceTree = "<group>"; };
 		6AF235C11F1F3FA6001F1379 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		6AF235F51F1F60E3001F1379 /* PLPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlayerViewController.h; sourceTree = "<group>"; };
+		6AF235F61F1F60E3001F1379 /* PLPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPlayerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -497,6 +500,8 @@
 		6A337CB31E1D3F7B00E120A3 /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				6AF235F51F1F60E3001F1379 /* PLPlayerViewController.h */,
+				6AF235F61F1F60E3001F1379 /* PLPlayerViewController.m */,
 				6A7B985E1F1DD926000FD224 /* SVPlayerView.h */,
 				6A7B985F1F1DD926000FD224 /* SVPlayerView.m */,
 				6AF234E41F1F139E001F1379 /* SVPlayerViewController.h */,
@@ -1043,6 +1048,7 @@
 				6A4444571E20AC3100B63013 /* SVProgressHUD.m in Sources */,
 				6AE060661F1DAA15003829F5 /* ZFDefaultHandle.m in Sources */,
 				6A337C8A1E1D3B7200E120A3 /* UIImageView+WebCache.m in Sources */,
+				6AF235F71F1F60E3001F1379 /* PLPlayerViewController.m in Sources */,
 				6A4444331E209F1700B63013 /* RootViewController.m in Sources */,
 				6A5677FA1E1D6CA70026739E /* HomeViewController.m in Sources */,
 				6A337C841E1D3B7200E120A3 /* SDWebImageManager.m in Sources */,

@@ -9,7 +9,7 @@
 #import "StoreViewController.h"
 #import "Store.h"
 #import "SVPlayerViewController.h"
-
+#import "PLPlayerViewController.h"
 @interface StoreViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -59,6 +59,7 @@
     SVPlayerViewController *vc = [[UIStoryboard storyboardWithName:@"Player" bundle:nil] instantiateInitialViewController];
     vc.playStore = s;
     [self.navigationController showViewController:vc sender:nil];
+    
 }
 
 

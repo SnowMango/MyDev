@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import <AVKit/AVKit.h>
 #import "Store.h"   
+#import "PLPlayerViewController.h"
 
 @interface HomeSubCell : UICollectionViewCell
 
@@ -34,6 +35,8 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (strong, nonatomic) NSArray *deviceList;
+
+@property (nonatomic, copy) void (^selectDeivce)(Device * device);
 
 - (void)loadData;
 
@@ -78,7 +81,11 @@
 #pragma mark - UICollectionViewDelegate
 -(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    Device * d = self.deviceList[indexPath.row];
     
+    if (self.selectDeivce) {
+        self.selectDeivce(d);
+    }
 }
 
 @end
@@ -122,7 +129,13 @@
     cell.titleLb.text =  s.name;
     
     cell.deviceList = s.devices;
-    
+    __weak typeof(self)weakSelf = self;
+    cell.selectDeivce = ^(Device *d)
+    {
+        PLPlayerViewController *vc = [[PLPlayerViewController alloc] initWithURL:[NSURL URLWithString:d.sn]];
+        vc.hidesBottomBarWhenPushed= YES;
+        [weakSelf.navigationController showViewController:vc sender:nil];
+    };
     [cell loadData];
     
     return cell;

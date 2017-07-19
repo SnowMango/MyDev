@@ -45,7 +45,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     self.playerView.delegate = self;
     
 //    [self playDevice];
