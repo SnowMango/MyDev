@@ -9,15 +9,6 @@
 #ifndef Application_pch
 #define Application_pch
 
-#import "MJRefresh.h"
-#import "UIImageView+WebCache.h"
-#import "UCloudMediaPlayer.h"
-#import "UCloudMediaPlayback.h"
-#import "SVProgressHUD.h"
-#import "MBProgressHUD.h"
-#import "UIScrollView+Extension.h"
-#import "UIViewExt.h"
-#import <AVKit/AVKit.h>
 
 #define SuppressPerformSelectorLeakWarning(Stuff) \
 do { \
@@ -41,5 +32,15 @@ _Pragma("clang diagnostic pop") \
 #if __OBJC__
 
 #import "ZFDefaultHandle.h"
+
+#import "MJRefresh.h"
+#import "UIImageView+WebCache.h"
+#import "SVProgressHUD.h"
+#import "MBProgressHUD.h"
+#import "UIScrollView+Extension.h"
+#import "UIViewExt.h"
+
+
+
 
 #endif

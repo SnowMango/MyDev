@@ -13,7 +13,7 @@
         <!--Player View Controller-->
         <scene sceneID="RUm-S1-bIW">
             <objects>
-                <viewController id="eZ2-T1-Jwl" customClass="PlayerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SVPlayerViewController" id="eZ2-T1-Jwl" customClass="SVPlayerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Tq-OJ-oZ7"/>
                         <viewControllerLayoutGuide type="bottom" id="Lxc-R8-Vpr"/>
@@ -22,24 +22,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mh2-xu-FeE">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mh2-xu-FeE" customClass="SVPlayerView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="211"/>
                                 <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="lht-fx-tKK">
+                                        <rect key="frame" x="177" y="95" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </activityIndicatorView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76h-cU-jVg" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuG-pf-vct">
-                                                <rect key="frame" x="321" y="173" width="46" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeE-IM-bR7">
+                                                <rect key="frame" x="8" y="158" width="45" height="45"/>
+                                                <state key="normal" image="player_playing.png"/>
+                                                <state key="highlighted" image="player_stop.png"/>
+                                                <connections>
+                                                    <action selector="playAndStopClick:" destination="eZ2-T1-Jwl" eventType="touchUpInside" id="U5w-1S-cpq"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeE-IM-bR7">
-                                                <rect key="frame" x="8" y="173" width="46" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuG-pf-vct">
+                                                <rect key="frame" x="322" y="158" width="45" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="45" id="d0O-aq-F7A"/>
+                                                    <constraint firstAttribute="height" constant="45" id="sh4-Yt-7IO"/>
+                                                </constraints>
+                                                <state key="normal" image="player_tool_cam.png"/>
+                                                <connections>
+                                                    <action selector="screenShotClick:" destination="eZ2-T1-Jwl" eventType="touchUpInside" id="gnr-Uo-TgI"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="zuG-pf-vct" secondAttribute="bottom" constant="8" id="1wW-AJ-oK7"/>
+                                            <constraint firstAttribute="trailing" secondItem="zuG-pf-vct" secondAttribute="trailing" constant="8" id="Fjh-Ot-U47"/>
+                                            <constraint firstItem="LeE-IM-bR7" firstAttribute="leading" secondItem="76h-cU-jVg" secondAttribute="leading" constant="8" id="MIZ-nO-Rbr"/>
+                                            <constraint firstAttribute="bottom" secondItem="LeE-IM-bR7" secondAttribute="bottom" constant="8" id="RLd-nc-Sh8"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.69535413209999997" blue="0.63917809029999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -50,6 +70,9 @@
                                     <constraint firstAttribute="bottom" secondItem="76h-cU-jVg" secondAttribute="bottom" id="adh-al-xye"/>
                                     <constraint firstItem="76h-cU-jVg" firstAttribute="leading" secondItem="Mh2-xu-FeE" secondAttribute="leading" id="uTl-6K-N8J"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="activityIndicatorView" destination="lht-fx-tKK" id="QbV-TI-NwA"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jW-gW-5tG">
                                 <rect key="frame" x="0.0" y="275" width="375" height="120"/>
@@ -73,7 +96,7 @@
                                             <inset key="sectionInset" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JCf-YL-xfM">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlayDeviceCellId" id="JCf-YL-xfM" customClass="PlayDeviceCell">
                                                 <rect key="frame" x="5" y="0.0" width="100" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -101,6 +124,10 @@
                                                     <constraint firstItem="1wf-m4-oPo" firstAttribute="top" secondItem="JCf-YL-xfM" secondAttribute="top" constant="5" id="cjt-aO-WSI"/>
                                                     <constraint firstItem="1wf-m4-oPo" firstAttribute="leading" secondItem="JCf-YL-xfM" secondAttribute="leading" constant="5" id="dZT-Eb-X8v"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="iconIV" destination="1wf-m4-oPo" id="mZZ-81-YWN"/>
+                                                    <outlet property="nameLb" destination="HVA-Ef-n5H" id="WsW-fT-UIn"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -180,7 +207,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="hFt-Aw-paC"/>
                     <connections>
-                        <outlet property="playView" destination="Mh2-xu-FeE" id="6FH-uq-8Qn"/>
+                        <outlet property="collectionView" destination="b7T-b4-SEz" id="qh8-ww-hb4"/>
+                        <outlet property="liveBtn" destination="sYk-uW-l4f" id="ZYf-2Q-knA"/>
+                        <outlet property="playBtn" destination="LeE-IM-bR7" id="iQd-og-zaj"/>
+                        <outlet property="playbackBtn" destination="XCb-7D-U8K" id="hP7-LC-ueJ"/>
+                        <outlet property="playerToolView" destination="76h-cU-jVg" id="jSD-80-TZ9"/>
+                        <outlet property="playerView" destination="Mh2-xu-FeE" id="3IZ-Ky-5GZ"/>
+                        <outlet property="screenShotBtn" destination="zuG-pf-vct" id="jUD-BK-GWm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpo-zm-BEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -204,4 +237,9 @@
             <point key="canvasLocation" x="-1007" y="-127"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="player_playing.png" width="45" height="45"/>
+        <image name="player_stop.png" width="45" height="45"/>
+        <image name="player_tool_cam.png" width="33" height="23"/>
+    </resources>
 </document>

@@ -35,7 +35,6 @@
             [SVProgressHUD dismissWithDelay:0.5 completion:nil];
         }
     }];
-//    NSString *uuid = [NSUUID UUID].UUIDString;
   
 }
 

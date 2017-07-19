@@ -9,8 +9,24 @@
 #import <UIKit/UIKit.h>
 #import "PLPlayerKit.h"
 
+
+@protocol SVPlayerViewDelegate <PLPlayerDelegate>
+
+@end
+
+@class Store, Device;
 @interface SVPlayerView : UIView<PLPlayerDelegate>
 @property (nonatomic, strong) PLPlayer  *player;
+
+@property (weak, nonatomic) id <SVPlayerViewDelegate> delegate;
+@property (copy, nonatomic) Device * device;
+
+
+- (void)play;
+
+- (void)stop;
+
+- (void)getScreenShotWithCompletionHandler:(ScreenShotWithCompletionHandler)handle;
 
 
 @end

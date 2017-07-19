@@ -8,7 +8,7 @@
 
 #import "StoreViewController.h"
 #import "Store.h"
-#import "PlayerViewController.h"
+#import "SVPlayerViewController.h"
 
 @interface StoreViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -55,7 +55,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   
+    Store *s = self.stores[indexPath.row];
+    SVPlayerViewController *vc = [[UIStoryboard storyboardWithName:@"Player" bundle:nil] instantiateInitialViewController];
+    vc.playStore = s;
+    [self.navigationController showViewController:vc sender:nil];
 }
 
 
