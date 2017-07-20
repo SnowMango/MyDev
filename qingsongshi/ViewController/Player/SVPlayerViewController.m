@@ -9,6 +9,8 @@
 #import "SVPlayerViewController.h"
 #import "SVPlayerView.h"
 
+@import SocketIO;
+
 @interface PlayDeviceCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView * iconIV;
@@ -38,22 +40,70 @@
 
 @property (nonatomic) NSInteger currentPlayDeviceIndex;
 
+@property (nonatomic, getter=isPlayerPlay) BOOL playerPlay;
+
 @end
 
 @implementation SVPlayerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.playerView.delegate = self;
+
+    self.currentPlayDeviceIndex = self.defaultIndex;
+    [self playDevice];
+    self.playerPlay = YES;
+
+}
+
+- (void)socketIOTest
+{
+    NSURL* url = [[NSURL alloc] initWithString:@"http://localhost:8080"];
+    SocketIOClient* socket = [[SocketIOClient alloc] initWithSocketURL:url config:@{@"log": @YES, @"compress": @YES}];
     
-//    [self playDevice];
+    [socket on:@"connect" callback:^(NSArray* data, SocketAckEmitter* ack) {
+        NSLog(@"socket connected");
+    }];
+    
+    [socket on:@"currentAmount" callback:^(NSArray* data, SocketAckEmitter* ack) {
+        double cur = [[data objectAtIndex:0] floatValue];
+        
+        [[socket emitWithAck:@"canUpdate" with:@[@(cur)]] timingOutAfter:0 callback:^(NSArray* data) {
+            [socket emit:@"update" with:@[@{@"amount": @(cur + 2.50)}]];
+        }];
+        
+        [ack with:@[@"Got your currentAmount, ", @"dude"]];
+    }];
+    
+    [socket connect];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    self.playerPlay = NO;
+    [self.playerView stop];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
 }
 - (void)playDevice
 {
     Device *d = self.playStore.devices[self.currentPlayDeviceIndex];
     self.playerView.device = d;
+
     [self.playerView play];
+}
+
+- (void)setPlayerPlay:(BOOL)playerPlay
+{
+    _playerPlay = playerPlay;
+    NSString *imageName = _playerPlay ? @"player_stop":@"player_playing";
+    [self.playBtn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations
@@ -63,16 +113,23 @@
 
 
 - (IBAction)playAndStopClick:(UIButton *)sender {
-    
-    NSString *imageName = self.playerView.player.isPlaying ? @"player_stop":@"player_playing";
-    [sender setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    self.playerPlay = !self.isPlayerPlay;
+    if (self.isPlayerPlay) {
+        [self.playerView play];
+    }else{
+        [self.playerView stop];
+    }
 }
 
 - (IBAction)screenShotClick:(UIButton *)sender {
     
     sender.userInteractionEnabled = NO;
+    [SVProgressHUD showInfoWithStatus:@"正在截图..."];
     [self.playerView getScreenShotWithCompletionHandler:^(UIImage * _Nullable image) {
+        [SVProgressHUD showInfoWithStatus:@"截图成功..."];
+        [SVProgressHUD dismissWithDelay:0.5];
         sender.userInteractionEnabled = YES;
+        
     }];
 }
 
@@ -120,6 +177,7 @@
     Device *d = self.playStore.devices[indexPath.row];
     self.playerView.device = d;
     [self.playerView play];
+    [collectionView reloadData];
 }
 
 

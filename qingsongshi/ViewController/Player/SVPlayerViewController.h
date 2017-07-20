@@ -15,4 +15,6 @@
 
 @property (strong, nonatomic) Store *playStore;
 
+@property (nonatomic) NSInteger defaultIndex;
+
 @end

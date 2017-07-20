@@ -9,7 +9,6 @@
 #import "StoreViewController.h"
 #import "Store.h"
 #import "SVPlayerViewController.h"
-#import "PLPlayerViewController.h"
 @interface StoreViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

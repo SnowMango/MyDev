@@ -9,7 +9,7 @@
 #import "HomeViewController.h"
 #import <AVKit/AVKit.h>
 #import "Store.h"   
-#import "PLPlayerViewController.h"
+#import "SVPlayerViewController.h"
 
 @interface HomeSubCell : UICollectionViewCell
 
@@ -132,8 +132,9 @@
     __weak typeof(self)weakSelf = self;
     cell.selectDeivce = ^(Device *d)
     {
-        PLPlayerViewController *vc = [[PLPlayerViewController alloc] initWithURL:[NSURL URLWithString:d.sn]];
-        vc.hidesBottomBarWhenPushed= YES;
+        SVPlayerViewController *vc = [[UIStoryboard storyboardWithName:@"Player" bundle:nil] instantiateInitialViewController];
+        vc.playStore = s;
+        vc.defaultIndex = [s.devices indexOfObject:d];
         [weakSelf.navigationController showViewController:vc sender:nil];
     };
     [cell loadData];
@@ -145,7 +146,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    Store *s = self.dataList[indexPath.row];
+    SVPlayerViewController *vc = [[UIStoryboard storyboardWithName:@"Player" bundle:nil] instantiateInitialViewController];
+    vc.playStore = s;
+    [self.navigationController showViewController:vc sender:nil];
 }
 
 

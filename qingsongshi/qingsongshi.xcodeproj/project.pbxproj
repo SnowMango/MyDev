@@ -29,7 +29,6 @@
 		6A337C8A1E1D3B7200E120A3 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A337C771E1D3B7200E120A3 /* UIImageView+WebCache.m */; };
 		6A337C8B1E1D3B7200E120A3 /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A337C791E1D3B7200E120A3 /* UIView+WebCache.m */; };
 		6A337C8C1E1D3B7200E120A3 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A337C7B1E1D3B7200E120A3 /* UIView+WebCacheOperation.m */; };
-		6A337C8E1E1D3BF900E120A3 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A337C8D1E1D3BF900E120A3 /* ImageIO.framework */; };
 		6A337C9D1E1D3CAC00E120A3 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A337C911E1D3CAC00E120A3 /* AFHTTPSessionManager.m */; };
 		6A337C9E1E1D3CAC00E120A3 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A337C941E1D3CAC00E120A3 /* AFNetworkReachabilityManager.m */; };
 		6A337C9F1E1D3CAC00E120A3 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A337C961E1D3CAC00E120A3 /* AFSecurityPolicy.m */; };
@@ -76,8 +75,6 @@
 		6A7B98801F1DE14A000FD224 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B987F1F1DE14A000FD224 /* libc++.tbd */; };
 		6A7B98821F1DE15E000FD224 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B98811F1DE15E000FD224 /* libbz2.tbd */; };
 		6A7B98841F1DE1AE000FD224 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B98831F1DE1AE000FD224 /* OpenGLES.framework */; };
-		6A7B98861F1DE1BB000FD224 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B98851F1DE1BB000FD224 /* Accelerate.framework */; };
-		6A7B98881F1DE1DC000FD224 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7B98871F1DE1DC000FD224 /* MediaPlayer.framework */; };
 		6AAA61B11E1CBDAF00ADEBFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA61B01E1CBDAF00ADEBFF /* main.m */; };
 		6AAA61B41E1CBDAF00ADEBFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA61B31E1CBDAF00ADEBFF /* AppDelegate.m */; };
 		6AAA61BF1E1CBDAF00ADEBFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AAA61BE1E1CBDAF00ADEBFF /* Assets.xcassets */; };
@@ -102,7 +99,6 @@
 		6AAA62091E1CC46500ADEBFF /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA61F51E1CC46500ADEBFF /* UIScrollView+MJRefresh.m */; };
 		6AAA620A1E1CC46500ADEBFF /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA61F71E1CC46500ADEBFF /* UIView+MJExtension.m */; };
 		6AAA620E1E1CC49000ADEBFF /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA620D1E1CC49000ADEBFF /* MBProgressHUD.m */; };
-		6AAA62161E1CC52300ADEBFF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AAA62151E1CC52300ADEBFF /* CoreGraphics.framework */; };
 		6AAA621E1E1CC54800ADEBFF /* NSArray+FirstLetterArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA62191E1CC54800ADEBFF /* NSArray+FirstLetterArray.m */; };
 		6AAA621F1E1CC54800ADEBFF /* NSString+FirstLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA621B1E1CC54800ADEBFF /* NSString+FirstLetter.m */; };
 		6AAA62201E1CC54800ADEBFF /* pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA621D1E1CC54800ADEBFF /* pinyin.m */; };
@@ -127,14 +123,12 @@
 		6AF2350B1F1F18F7001F1379 /* player_stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF235051F1F18F7001F1379 /* player_stop@2x.png */; };
 		6AF2350C1F1F18F7001F1379 /* player_playing@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF235061F1F18F7001F1379 /* player_playing@2x.png */; };
 		6AF235271F1F1A20001F1379 /* player_tool_cam@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF235261F1F1A20001F1379 /* player_tool_cam@2x.png */; };
-		6AF235F71F1F60E3001F1379 /* PLPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF235F61F1F60E3001F1379 /* PLPlayerViewController.m */; };
-		DD4C3C64A09A48DF7D9EB610 /* libPods-qingsongshi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EB647199A0D8EF827C3EAA /* libPods-qingsongshi.a */; };
+		ECCF049E76277E77C433A4BF /* Pods_qingsongshi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CACC3C3F11BF97F7D07B89B /* Pods_qingsongshi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		31D035B8190E3A25B2957C9F /* Pods-qingsongshi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qingsongshi.release.xcconfig"; path = "Pods/Target Support Files/Pods-qingsongshi/Pods-qingsongshi.release.xcconfig"; sourceTree = "<group>"; };
 		39E16FE1CA8CF1EF8EC2F057 /* Pods-qingsongshi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qingsongshi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-qingsongshi/Pods-qingsongshi.debug.xcconfig"; sourceTree = "<group>"; };
-		56EB647199A0D8EF827C3EAA /* libPods-qingsongshi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qingsongshi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A337C4E1E1D361B00E120A3 /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@2x.png"; sourceTree = "<group>"; };
 		6A337C4F1E1D361B00E120A3 /* store@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "store@2x.png"; sourceTree = "<group>"; };
 		6A337C501E1D361B00E120A3 /* find@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "find@2x.png"; sourceTree = "<group>"; };
@@ -332,8 +326,7 @@
 		6AF235061F1F18F7001F1379 /* player_playing@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_playing@2x.png"; sourceTree = "<group>"; };
 		6AF235261F1F1A20001F1379 /* player_tool_cam@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_tool_cam@2x.png"; sourceTree = "<group>"; };
 		6AF235C11F1F3FA6001F1379 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
-		6AF235F51F1F60E3001F1379 /* PLPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlayerViewController.h; sourceTree = "<group>"; };
-		6AF235F61F1F60E3001F1379 /* PLPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPlayerViewController.m; sourceTree = "<group>"; };
+		9CACC3C3F11BF97F7D07B89B /* Pods_qingsongshi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_qingsongshi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,8 +334,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A7B98881F1DE1DC000FD224 /* MediaPlayer.framework in Frameworks */,
-				6A7B98861F1DE1BB000FD224 /* Accelerate.framework in Frameworks */,
 				6A7B98841F1DE1AE000FD224 /* OpenGLES.framework in Frameworks */,
 				6A7B98821F1DE15E000FD224 /* libbz2.tbd in Frameworks */,
 				6A7B98801F1DE14A000FD224 /* libc++.tbd in Frameworks */,
@@ -353,9 +344,7 @@
 				6AD37CF01E1DEDBC0012B37A /* CoreMedia.framework in Frameworks */,
 				6AD37CEE1E1DEDAB0012B37A /* VideoToolbox.framework in Frameworks */,
 				6AD37CEC1E1DED9A0012B37A /* libz.tbd in Frameworks */,
-				6A337C8E1E1D3BF900E120A3 /* ImageIO.framework in Frameworks */,
-				6AAA62161E1CC52300ADEBFF /* CoreGraphics.framework in Frameworks */,
-				DD4C3C64A09A48DF7D9EB610 /* libPods-qingsongshi.a in Frameworks */,
+				ECCF049E76277E77C433A4BF /* Pods_qingsongshi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,8 +489,6 @@
 		6A337CB31E1D3F7B00E120A3 /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				6AF235F51F1F60E3001F1379 /* PLPlayerViewController.h */,
-				6AF235F61F1F60E3001F1379 /* PLPlayerViewController.m */,
 				6A7B985E1F1DD926000FD224 /* SVPlayerView.h */,
 				6A7B985F1F1DD926000FD224 /* SVPlayerView.m */,
 				6AF234E41F1F139E001F1379 /* SVPlayerViewController.h */,
@@ -813,7 +800,7 @@
 				6AD37CEB1E1DED9A0012B37A /* libz.tbd */,
 				6A337C8D1E1D3BF900E120A3 /* ImageIO.framework */,
 				6AAA62151E1CC52300ADEBFF /* CoreGraphics.framework */,
-				56EB647199A0D8EF827C3EAA /* libPods-qingsongshi.a */,
+				9CACC3C3F11BF97F7D07B89B /* Pods_qingsongshi.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -996,9 +983,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-qingsongshi/Pods-qingsongshi-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/HappyDNS/HappyDNS.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HappyDNS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1048,7 +1040,6 @@
 				6A4444571E20AC3100B63013 /* SVProgressHUD.m in Sources */,
 				6AE060661F1DAA15003829F5 /* ZFDefaultHandle.m in Sources */,
 				6A337C8A1E1D3B7200E120A3 /* UIImageView+WebCache.m in Sources */,
-				6AF235F71F1F60E3001F1379 /* PLPlayerViewController.m in Sources */,
 				6A4444331E209F1700B63013 /* RootViewController.m in Sources */,
 				6A5677FA1E1D6CA70026739E /* HomeViewController.m in Sources */,
 				6A337C841E1D3B7200E120A3 /* SDWebImageManager.m in Sources */,
@@ -1215,8 +1206,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GVH7JZXR3Q;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = qingsongshi/Application.pch;
 				INFOPLIST_FILE = qingsongshi/Info.plist;
@@ -1242,8 +1234,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GVH7JZXR3Q;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = qingsongshi/Application.pch;
 				INFOPLIST_FILE = qingsongshi/Info.plist;

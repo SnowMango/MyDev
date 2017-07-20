@@ -37,6 +37,8 @@ static NSString *status[] = {
 {
     [super awakeFromNib];
     [self setupUI];
+    [self setupPlayer];
+    
 }
 
 
@@ -49,20 +51,26 @@ static NSString *status[] = {
 
 - (void)setupPlayer
 {
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     PLPlayerOption *option = [PLPlayerOption defaultOption];
     [option setOptionValue:@10 forKey:PLPlayerOptionKeyTimeoutIntervalForMediaPackets];
-    self.player = [PLPlayer playerWithURL:[NSURL URLWithString:self.device.sn] option:option];
+    self.player = [PLPlayer playerWithURL:nil option:option];
     self.player.delegate = self;
     self.player.delegateQueue = dispatch_get_main_queue();
     self.player.backgroundPlayEnable = YES;
+    self.player.playerView.frame = self.bounds;
+    [self addSubview:self.player.playerView];
+    [self bringSubviewToFront:self.player.playerView];
 }
-- (void)setDevice:(Device *)device
+
+- (void)layoutSubviews
 {
-    _device = device;
-    if (_device) {
-        [self setupPlayer];
+    [super layoutSubviews];
+    if (self.player) {
+        self.player.playerView.frame = self.bounds;
     }
 }
+
 
 - (void)play
 {

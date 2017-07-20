@@ -1,0 +1,6 @@
+framework module Pods_qingsongshi {
+  umbrella header "Pods-qingsongshi-umbrella.h"
+
+  export *
+  module * { export * }
+}

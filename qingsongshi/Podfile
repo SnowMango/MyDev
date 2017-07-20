@@ -1,5 +1,6 @@
 platform :ios, '8.0'
-
+use_frameworks!
 target 'qingsongshi' do
   pod "PLPlayerKit", :path => '../PLPlayerKit'
+  pod 'Socket.IO-Client-Swift', '~> 10.2.0'
 end
