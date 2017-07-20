@@ -77,7 +77,6 @@
              @"http://pic3.zhongsou.com/image/3805136b09be936d79b.jpg",
              @"http://d.hiphotos.baidu.com/zhidao/pic/item/10dfa9ec8a13632789e9c937938fa0ec08fac7aa.jpg",
              @"http://t1.niutuku.com/960/25/25-320250.jpg",
-             @"http://t-1.tuzhan.com/442ffee5b0c9/c-1/l/2012/08/29/06/d44b642f8f604b0984e6a3fd8e43782b.jpg",
              @"http://image.it168.com/n/640x480/5/5304/5304272.jpg",
              @"http://farm5.staticflickr.com/4109/4995447265_fb490674a5.jpg",
              @"http://k.zol-img.com.cn/dcbbs/20960/a20959415_01000.jpg",];

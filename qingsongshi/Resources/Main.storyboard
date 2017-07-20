@@ -14,11 +14,11 @@
         <scene sceneID="tO9-8T-ace">
             <objects>
                 <navigationController id="7nJ-fG-26G" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" image="dong.png" id="zgO-b9-j5w"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="home.png" id="zgO-b9-j5w"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6qr-BD-AUN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.11764705882352941" green="0.50980392156862742" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.3411764705882353" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -288,7 +288,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="0.1176470588" green="0.50980392159999999" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="0.3411764706" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="0.3411764706" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="7nJ-fG-26G" kind="relationship" relationship="viewControllers" id="spW-07-9Zv"/>
@@ -434,7 +435,6 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vjE-OK-CTk">
                                         <rect key="frame" x="112.5" y="15" width="60" height="60"/>
-                                        <color key="backgroundColor" red="0.25098039220000001" green="0.69803921570000005" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="e4U-zR-jeI"/>
                                             <constraint firstAttribute="width" secondItem="vjE-OK-CTk" secondAttribute="height" multiplier="1:1" id="is3-9B-fiP"/>
@@ -528,7 +528,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="T5q-JF-Mim">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.1176470588" green="0.50980392159999999" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.3411764706" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -549,7 +549,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uc1-pc-AWc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.1176470588" green="0.50980392159999999" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.3411764706" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -570,7 +570,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ElQ-UK-kTt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.1176470588" green="0.50980392159999999" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.3411764706" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -586,8 +586,8 @@
     </scenes>
     <resources>
         <image name="AppIcon.png" width="58" height="58"/>
-        <image name="dong.png" width="26" height="26"/>
         <image name="find.png" width="26" height="26"/>
+        <image name="home.png" width="26" height="26"/>
         <image name="store.png" width="26" height="26"/>
         <image name="tabbarBg.png" width="320" height="49"/>
         <image name="user.png" width="26" height="26"/>

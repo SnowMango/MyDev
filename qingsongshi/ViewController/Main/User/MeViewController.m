@@ -28,7 +28,7 @@
     // Do any additional setup after loading the view.
     self.loginUser = [User defaultUser];
     
-    [self.userIconIV sd_setImageWithURL:[NSURL URLWithString:self.loginUser.iconURL]];
+    [self.userIconIV sd_setImageWithURL:[NSURL URLWithString:self.loginUser.iconURL] placeholderImage:[UIImage imageNamed:@"user_icon"]];
     self.NickNameLb.text = self.loginUser.nickname;
     self.roleNameLb.text = self.loginUser.roleName;
     self.userIdentifierLb.text = self.loginUser.identifier;
