@@ -9,6 +9,22 @@
 #import "StoreViewController.h"
 #import "Store.h"
 #import "SVPlayerViewController.h"
+
+
+@interface StoreCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *iconIV;
+@property (weak, nonatomic) IBOutlet UILabel *titleLb;
+
+@end
+
+@implementation StoreCell
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+}
+
+@end
 @interface StoreViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -33,23 +49,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"StoreCellId"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"StoreCellId"];
-        cell.textLabel.font = [UIFont systemFontOfSize:13];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
-    Store *s = self.stores[indexPath.row];
-    cell.textLabel.text = s.name;
-    
+    StoreCell * cell = [tableView dequeueReusableCellWithIdentifier:@"StoreCellId" forIndexPath:indexPath];
+        Store *s = self.stores[indexPath.row];
+    cell.titleLb.text = s.name;
+    NSURL *url = [NSURL URLWithString:s.iconURL];
+    [cell.iconIV sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@""]];
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 40;
+    return 61;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

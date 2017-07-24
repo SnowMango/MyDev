@@ -46,15 +46,26 @@
 
 @implementation SVPlayerViewController
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     self.playerView.delegate = self;
-
+    self.title = self.playStore.name;
     self.currentPlayDeviceIndex = self.defaultIndex;
     [self playDevice];
+    
+    if (self.navigationController.navigationItem.leftBarButtonItem) {
+        NSLog(@"-navigationItem-- %@", self.navigationController.navigationItem.leftBarButtonItem.title);
+    }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
     self.playerPlay = YES;
-
+    [self updateCollectionViewFlowLayout];
 }
 
 - (void)socketIOTest
@@ -91,6 +102,36 @@
     [super viewDidAppear:animated];
     
 }
+
+
+- (void)orientationDidChange:(NSNotification *)change
+{
+    UIDeviceOrientation ori = [UIDevice currentDevice].orientation;
+    if (ori == UIDeviceOrientationPortrait) {
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    }else if (UIDeviceOrientationIsLandscape(ori)){
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+    }
+    [self updateCollectionViewFlowLayout];
+}
+
+- (void)updateCollectionViewFlowLayout
+{
+    UICollectionViewFlowLayout * layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+    UIDeviceOrientation ori = [UIDevice currentDevice].orientation;
+    if (ori == UIDeviceOrientationPortrait) {
+        layout.minimumLineSpacing = 2;
+        layout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 0);
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    }else if (UIDeviceOrientationIsLandscape(ori)){
+        layout.minimumLineSpacing = 2;
+        layout.sectionInset = UIEdgeInsetsMake(10, 0, 0, 0);
+        layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    }
+    
+    [self.collectionView reloadData];
+}
+
 - (void)playDevice
 {
     Device *d = self.playStore.devices[self.currentPlayDeviceIndex];
@@ -155,6 +196,7 @@
     PlayDeviceCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PlayDeviceCellId" forIndexPath:indexPath];
     Device *d = self.playStore.devices[indexPath.row];
     cell.nameLb.text = d.name;
+    [cell.iconIV sd_setImageWithURL:[NSURL URLWithString:d.iconURL] placeholderImage:[UIImage imageNamed:@""]];
     cell.layer.borderColor = [UIColor yellowColor].CGColor;
     cell.layer.borderWidth = self.currentPlayDeviceIndex == indexPath.row?1:0;
     return cell;
@@ -162,8 +204,8 @@
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat width = 100;
-    CGFloat height = CGRectGetHeight(collectionView.frame);
+    CGFloat width = 125;
+    CGFloat height = 85;
     return CGSizeMake(width, height);
 }
 
@@ -178,6 +220,7 @@
     self.playerView.device = d;
     [self.playerView play];
     [collectionView reloadData];
+    
 }
 
 

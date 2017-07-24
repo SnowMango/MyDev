@@ -67,13 +67,13 @@
     Device * d = self.deviceList[indexPath.row];
     
     cell.nameLb.text = d.name;
-    
+    [cell.iconIV sd_setImageWithURL:[NSURL URLWithString:d.iconURL] placeholderImage:[UIImage imageNamed:@""]];
     return cell;
 }
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat width = 100;
+    CGFloat width = 115;
     CGFloat height = CGRectGetHeight(collectionView.frame);
     return CGSizeMake(width, height);
 }
@@ -109,7 +109,7 @@
     
     self.dataList = [[ZFDefaultHandle shareInstance] handleStore];
     
-    self.tableView.rowHeight = 131;
+    self.tableView.rowHeight = 115;
     self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
@@ -143,6 +143,11 @@
 }
 
 #pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 115;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

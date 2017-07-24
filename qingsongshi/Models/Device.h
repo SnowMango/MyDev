@@ -16,4 +16,5 @@
 @property (strong, nonatomic) NSString * name;
 @property (strong, nonatomic) NSString * identifier;
 @property (strong, nonatomic) NSString * sn;
+@property (strong, nonatomic) NSString * iconURL;
 @end

@@ -58,9 +58,9 @@ static NSString *status[] = {
     self.player.delegate = self;
     self.player.delegateQueue = dispatch_get_main_queue();
     self.player.backgroundPlayEnable = YES;
-    self.player.playerView.frame = self.bounds;
+
     [self addSubview:self.player.playerView];
-    [self bringSubviewToFront:self.player.playerView];
+    
 }
 
 - (void)layoutSubviews
@@ -69,11 +69,15 @@ static NSString *status[] = {
     if (self.player) {
         self.player.playerView.frame = self.bounds;
     }
+    [self sendSubviewToBack:self.player.playerView];
 }
 
 
 - (void)play
 {
+    self.activityIndicatorView.hidden = NO;
+    [self.activityIndicatorView startAnimating];
+
     [UIApplication sharedApplication].idleTimerDisabled = YES;
     [self.player playWithURL:[NSURL URLWithString:self.device.sn]];
 }
@@ -99,7 +103,7 @@ static NSString *status[] = {
     if (PLPlayerStatusCaching == state) {
         self.activityIndicatorView.hidden = NO;
         [self.activityIndicatorView startAnimating];
-    } else {
+    } else if (PLPlayerStatusPlaying == state){
         [self.activityIndicatorView stopAnimating];
         self.activityIndicatorView.hidden = YES;
     }

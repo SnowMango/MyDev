@@ -11,5 +11,6 @@
 @interface Store : BaseModel
 @property (strong, nonatomic) NSString * name;
 @property (strong, nonatomic) NSString * identifier;
+@property (strong, nonatomic) NSString * iconURL;
 @property (strong, nonatomic) NSMutableArray <Device *>* devices;
 @end

@@ -117,6 +117,7 @@
 		6AD37CF21E1DEDC40012B37A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD37CF11E1DEDC40012B37A /* AudioToolbox.framework */; };
 		6AD37CF41E1DEDD00012B37A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD37CF31E1DEDD00012B37A /* AVFoundation.framework */; };
 		6AE060661F1DAA15003829F5 /* ZFDefaultHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE060651F1DAA15003829F5 /* ZFDefaultHandle.m */; };
+		6AEE37AC1F21D5B60086766F /* navigation_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AEE37AB1F21D5B60086766F /* navigation_back@2x.png */; };
 		6AF234E61F1F139E001F1379 /* SVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF234E51F1F139E001F1379 /* SVPlayerViewController.m */; };
 		6AF235071F1F18F7001F1379 /* player_voice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF235011F1F18F7001F1379 /* player_voice@2x.png */; };
 		6AF235081F1F18F7001F1379 /* player_mute@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF235021F1F18F7001F1379 /* player_mute@2x.png */; };
@@ -320,6 +321,7 @@
 		6AD37CF31E1DEDD00012B37A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6AE060641F1DAA15003829F5 /* ZFDefaultHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFDefaultHandle.h; sourceTree = "<group>"; };
 		6AE060651F1DAA15003829F5 /* ZFDefaultHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFDefaultHandle.m; sourceTree = "<group>"; };
+		6AEE37AB1F21D5B60086766F /* navigation_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_back@2x.png"; sourceTree = "<group>"; };
 		6AF234E41F1F139E001F1379 /* SVPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPlayerViewController.h; sourceTree = "<group>"; };
 		6AF234E51F1F139E001F1379 /* SVPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVPlayerViewController.m; sourceTree = "<group>"; };
 		6AF235011F1F18F7001F1379 /* player_voice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_voice@2x.png"; sourceTree = "<group>"; };
@@ -369,9 +371,9 @@
 			children = (
 				6AA4C6E81F20B83600822098 /* home@2x.png */,
 				6A337C561E1D36E800E120A3 /* tabbarBg@2x.png */,
-				6A337C4E1E1D361B00E120A3 /* user@2x.png */,
 				6A337C4F1E1D361B00E120A3 /* store@2x.png */,
 				6A337C501E1D361B00E120A3 /* find@2x.png */,
+				6A337C4E1E1D361B00E120A3 /* user@2x.png */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -834,6 +836,7 @@
 		6AAA623C1E1CCEE400ADEBFF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6AEE37AB1F21D5B60086766F /* navigation_back@2x.png */,
 				6AA4C6E31F209AA100822098 /* Launch */,
 				6AF234E71F1F16F6001F1379 /* Player */,
 				6A44441E1E20920700B63013 /* Login */,
@@ -933,6 +936,7 @@
 			files = (
 				6A4444281E20922500B63013 /* iconfont-password.png in Resources */,
 				6A337C531E1D361B00E120A3 /* store@2x.png in Resources */,
+				6AEE37AC1F21D5B60086766F /* navigation_back@2x.png in Resources */,
 				6AAA62431E1CD7E400ADEBFF /* AppIcon.png in Resources */,
 				6A4444271E20922500B63013 /* icon_hand.png in Resources */,
 				6A337D011E1D69CC00E120A3 /* me_4@2x.png in Resources */,
