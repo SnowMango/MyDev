@@ -2,21 +2,26 @@ PODS:
   - HappyDNS (0.3.10)
   - PLPlayerKit (2.4.3):
     - HappyDNS (~> 0.3.10)
-  - Socket.IO-Client-Swift (10.2.0)
+  - Socket.IO-Client-Swift (10.0.1)
 
 DEPENDENCIES:
+  - HappyDNS (from `../HappyDNS`)
   - PLPlayerKit (from `../PLPlayerKit`)
-  - Socket.IO-Client-Swift (~> 10.2.0)
+  - Socket.IO-Client-Swift (from `../Socket.IO-Client-Swift`)
 
 EXTERNAL SOURCES:
+  HappyDNS:
+    :path: ../HappyDNS
   PLPlayerKit:
     :path: ../PLPlayerKit
+  Socket.IO-Client-Swift:
+    :path: ../Socket.IO-Client-Swift
 
 SPEC CHECKSUMS:
   HappyDNS: 06a9fed2796663fd87626dbf02552933265bf059
   PLPlayerKit: 6575f900d3a1c3680e3fd8907338683d0eedcd79
-  Socket.IO-Client-Swift: ecd7fe4d2746a7557e71c2d6e95e23e3be31ddd1
+  Socket.IO-Client-Swift: 2d5c9da8a72cdcd33d92a84f83af28f39f34c182
 
-PODFILE CHECKSUM: 48e9d11d2fd4bac6edf9682320d3f694700d0ad9
+PODFILE CHECKSUM: e32a8eeeaf4f3a6f3dfd6fd7195b12ba05482150
 
 COCOAPODS: 1.3.0.beta.2

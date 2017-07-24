@@ -59,6 +59,7 @@
     self.currentPlayDeviceIndex = self.defaultIndex;
     [self playDevice];
     
+    self.screenShotBtn.hidden = YES;
     if (self.navigationController.navigationItem.leftBarButtonItem) {
         NSLog(@"-navigationItem-- %@", self.navigationController.navigationItem.leftBarButtonItem.title);
     }

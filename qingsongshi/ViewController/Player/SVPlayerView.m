@@ -84,11 +84,10 @@ static NSString *status[] = {
 
 - (void)stop
 {
-    if (!self.player.isPlaying) {
-        return;
-    }
     [UIApplication sharedApplication].idleTimerDisabled = NO;
-    [self.player stop];
+    if (self.player.isPlaying) {
+       [self.player stop];
+    }
 }
 
 - (void)getScreenShotWithCompletionHandler:(ScreenShotWithCompletionHandler)handle
