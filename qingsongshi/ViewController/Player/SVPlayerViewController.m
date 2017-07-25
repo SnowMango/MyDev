@@ -28,6 +28,9 @@
 @end
 
 @interface SVPlayerViewController ()<SVPlayerViewDelegate>
+{
+    SocketIOClient* socket;
+}
 @property (weak, nonatomic) IBOutlet SVPlayerView *playerView;
 @property (weak, nonatomic) IBOutlet UIView *playerToolView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -57,8 +60,8 @@
     self.playerView.delegate = self;
     self.title = self.playStore.name;
     self.currentPlayDeviceIndex = self.defaultIndex;
-    [self playDevice];
     
+    [self socketIOTest];
     self.screenShotBtn.hidden = YES;
     if (self.navigationController.navigationItem.leftBarButtonItem) {
         NSLog(@"-navigationItem-- %@", self.navigationController.navigationItem.leftBarButtonItem.title);
@@ -71,21 +74,25 @@
 
 - (void)socketIOTest
 {
-    NSURL* url = [[NSURL alloc] initWithString:@"http://localhost:8080"];
-    SocketIOClient* socket = [[SocketIOClient alloc] initWithSocketURL:url config:@{@"log": @YES, @"compress": @YES}];
+    if (!socket) {
+        NSURL* url = [[NSURL alloc] initWithString:@"http://smart.shenzy.com.cn:3000"];
+        socket = [[SocketIOClient alloc] initWithSocketURL:url config:@{@"log": @YES, @"compress": @YES}];
+    }
+   
     
     [socket on:@"connect" callback:^(NSArray* data, SocketAckEmitter* ack) {
+        [socket emit:@"usr" with:@[@{@"tag":@"695",@"cam":@0}]];
+        
         NSLog(@"socket connected");
     }];
     
-    [socket on:@"currentAmount" callback:^(NSArray* data, SocketAckEmitter* ack) {
-        double cur = [[data objectAtIndex:0] floatValue];
-        
-        [[socket emitWithAck:@"canUpdate" with:@[@(cur)]] timingOutAfter:0 callback:^(NSArray* data) {
-            [socket emit:@"update" with:@[@{@"amount": @(cur + 2.50)}]];
-        }];
-        
-        [ack with:@[@"Got your currentAmount, ", @"dude"]];
+    [socket on:@"usr" callback:^(NSArray* data, SocketAckEmitter* ack) {
+        NSLog(@"callback == %@", data);
+        NSDictionary *msg = data.firstObject;
+        Device *d = self.playStore.devices[self.currentPlayDeviceIndex];
+        d.online = [msg[@"status"] isEqualToString:@"online"];
+        d.sn = msg[@"url"];
+        [self playDevice];
     }];
     
     [socket connect];
@@ -96,6 +103,10 @@
     [super viewDidDisappear:animated];
     self.playerPlay = NO;
     [self.playerView stop];
+    if (socket) {
+        [socket disconnect];
+    }
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated

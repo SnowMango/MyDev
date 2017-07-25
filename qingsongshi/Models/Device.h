@@ -17,4 +17,7 @@
 @property (strong, nonatomic) NSString * identifier;
 @property (strong, nonatomic) NSString * sn;
 @property (strong, nonatomic) NSString * iconURL;
+
+@property (assign, nonatomic) BOOL online;
+@property (strong, nonatomic) NSString *tag;
 @end
