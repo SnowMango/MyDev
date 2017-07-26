@@ -95,15 +95,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mh2-xu-FeE" customClass="SVPlayerView">
                                 <rect key="frame" x="0.0" y="20" width="375" height="211"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="lht-fx-tKK">
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="lht-fx-tKK">
                                         <rect key="frame" x="177" y="95" width="20" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.69535413209999997" blue="0.63917809029999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Mh2-xu-FeE" secondAttribute="height" multiplier="16:9" id="T6Z-aD-6FT"/>
+                                    <constraint firstItem="lht-fx-tKK" firstAttribute="centerX" secondItem="Mh2-xu-FeE" secondAttribute="centerX" id="dAa-61-afo"/>
+                                    <constraint firstItem="lht-fx-tKK" firstAttribute="centerY" secondItem="Mh2-xu-FeE" secondAttribute="centerY" id="x5M-u5-FNm"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="activityIndicatorView" destination="lht-fx-tKK" id="QbV-TI-NwA"/>
@@ -262,22 +263,22 @@
                             <mask key="constraints">
                                 <exclude reference="1zs-Cu-5dI"/>
                                 <exclude reference="nGz-fb-VYr"/>
-                                <exclude reference="9yI-Ub-gZn"/>
-                                <exclude reference="3z2-pt-gpk"/>
                                 <exclude reference="VYV-1L-nYa"/>
                                 <exclude reference="WVh-J5-9gL"/>
                                 <exclude reference="hyc-kF-Hfj"/>
                                 <exclude reference="pF5-2n-Sfa"/>
                                 <exclude reference="pIm-iP-xko"/>
+                                <exclude reference="9yI-Ub-gZn"/>
+                                <exclude reference="3z2-pt-gpk"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="constraints">
                                 <include reference="nGz-fb-VYr"/>
-                                <exclude reference="9yI-Ub-gZn"/>
-                                <include reference="3z2-pt-gpk"/>
                                 <include reference="WVh-J5-9gL"/>
                                 <include reference="pIm-iP-xko"/>
+                                <exclude reference="9yI-Ub-gZn"/>
+                                <include reference="3z2-pt-gpk"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
